@@ -1,7 +1,7 @@
 # ❓ FRAGEN & ANTWORTEN - DETAILLIERT
 
 **Erstellt:** 18. Dezember 2024  
-**Letzte Aktualisierung:** 18. Dezember 2024, 16:45 Uhr
+**Letzte Aktualisierung:** 18. Dezember 2024, 16:50 Uhr
 
 ---
 
