@@ -246,8 +246,8 @@ class PineconeService {
    * Erstellt Embedding für Text (nutzt OpenAI)
    */
   async createEmbedding(text) {
-    const OpenAI = require('../integrations/OpenAIClient');
-    const openaiClient = new OpenAI();
+    const OpenAIClient = require('../integrations/OpenAIClient');
+    const openaiClient = new OpenAIClient();
     return await openaiClient.createEmbedding(text);
   }
 

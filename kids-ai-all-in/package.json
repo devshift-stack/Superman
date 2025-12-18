@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "test": "jest --testPathPattern=tests --coverage"
   },
   "keywords": [
     "ai",
@@ -28,5 +29,8 @@
     "openai": "^6.14.0",
     "sqlite3": "^5.1.7",
     "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
