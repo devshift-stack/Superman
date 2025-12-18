@@ -1,0 +1,185 @@
+{
+  "agents": {
+    "solar": {
+      "Lisa": {
+        "voice": "de-DE-Neural2-C",
+        "gender": "FEMALE",
+        "speakingRate": 0.98,
+        "pitch": 0.2,
+        "volumeGainDb": 0.0,
+        "pauses": {
+          "short": 0.3,
+          "medium": 0.5,
+          "long": 0.8
+        },
+        "emotion": "warm"
+      },
+      "Sarah": {
+        "voice": "de-DE-Neural2-D",
+        "gender": "FEMALE",
+        "speakingRate": 0.95,
+        "pitch": 0.1,
+        "volumeGainDb": 0.0,
+        "pauses": {
+          "short": 0.4,
+          "medium": 0.6,
+          "long": 0.9
+        },
+        "emotion": "empathetic"
+      },
+      "Anna": {
+        "voice": "de-DE-Neural2-E",
+        "gender": "FEMALE",
+        "speakingRate": 1.05,
+        "pitch": 0.15,
+        "volumeGainDb": 0.5,
+        "pauses": {
+          "short": 0.25,
+          "medium": 0.4,
+          "long": 0.7
+        },
+        "emotion": "enthusiastic"
+      },
+      "Julia": {
+        "voice": "de-DE-Neural2-F",
+        "gender": "FEMALE",
+        "speakingRate": 1.0,
+        "pitch": 0.1,
+        "volumeGainDb": 0.0,
+        "pauses": {
+          "short": 0.35,
+          "medium": 0.5,
+          "long": 0.8
+        },
+        "emotion": "professional"
+      }
+    },
+    "strom": {
+      "Max": {
+        "voice": "de-DE-Neural2-A",
+        "gender": "MALE",
+        "speakingRate": 1.0,
+        "pitch": -0.1,
+        "volumeGainDb": 0.0,
+        "pauses": {
+          "short": 0.3,
+          "medium": 0.4,
+          "long": 0.7
+        },
+        "emotion": "competent"
+      },
+      "Thomas": {
+        "voice": "de-DE-Neural2-B",
+        "gender": "MALE",
+        "speakingRate": 0.96,
+        "pitch": -0.15,
+        "volumeGainDb": 0.0,
+        "pauses": {
+          "short": 0.35,
+          "medium": 0.45,
+          "long": 0.75
+        },
+        "emotion": "professional"
+      },
+      "Michael": {
+        "voice": "de-DE-Neural2-C",
+        "gender": "MALE",
+        "speakingRate": 1.03,
+        "pitch": -0.08,
+        "volumeGainDb": 0.5,
+        "pauses": {
+          "short": 0.28,
+          "medium": 0.38,
+          "long": 0.65
+        },
+        "emotion": "friendly"
+      }
+    },
+    "handy": {
+      "Nicole": {
+        "voice": "de-DE-Neural2-C",
+        "gender": "FEMALE",
+        "speakingRate": 1.05,
+        "pitch": 0.2,
+        "volumeGainDb": 1.0,
+        "pauses": {
+          "short": 0.25,
+          "medium": 0.35,
+          "long": 0.6
+        },
+        "emotion": "enthusiastic"
+      },
+      "Jennifer": {
+        "voice": "de-DE-Neural2-D",
+        "gender": "FEMALE",
+        "speakingRate": 1.0,
+        "pitch": 0.15,
+        "volumeGainDb": 0.0,
+        "pauses": {
+          "short": 0.3,
+          "medium": 0.4,
+          "long": 0.7
+        },
+        "emotion": "friendly"
+      },
+      "Melanie": {
+        "voice": "de-DE-Neural2-E",
+        "gender": "FEMALE",
+        "speakingRate": 0.98,
+        "pitch": 0.18,
+        "volumeGainDb": 0.0,
+        "pauses": {
+          "short": 0.32,
+          "medium": 0.42,
+          "long": 0.72
+        },
+        "emotion": "competent"
+      }
+    }
+  },
+  "defaults": {
+    "audioEncoding": "MP3",
+    "sampleRateHertz": 24000,
+    "enableTimePointing": true,
+    "languageCode": "de-DE"
+  },
+  "emotions": {
+    "warm": {
+      "speakingRate": -0.02,
+      "pitch": 0.0,
+      "volumeGainDb": 0.0,
+      "pauseMultiplier": 1.1
+    },
+    "empathetic": {
+      "speakingRate": -0.05,
+      "pitch": -0.05,
+      "volumeGainDb": -1.0,
+      "pauseMultiplier": 1.2
+    },
+    "enthusiastic": {
+      "speakingRate": 0.05,
+      "pitch": 0.1,
+      "volumeGainDb": 1.0,
+      "pauseMultiplier": 0.9
+    },
+    "professional": {
+      "speakingRate": 0.0,
+      "pitch": 0.0,
+      "volumeGainDb": 0.0,
+      "pauseMultiplier": 1.0
+    },
+    "competent": {
+      "speakingRate": 0.0,
+      "pitch": 0.0,
+      "volumeGainDb": 0.0,
+      "pauseMultiplier": 1.0
+    },
+    "friendly": {
+      "speakingRate": 0.02,
+      "pitch": 0.05,
+      "volumeGainDb": 0.5,
+      "pauseMultiplier": 0.95
+    }
+  }
+}
+

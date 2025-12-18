@@ -1,0 +1,20 @@
+📊 DASHBOARD URLS:
+
+Lokal (auf diesem Rechner):
+  http://localhost:8080/dashboard.html
+
+Netzwerk (von anderen Geräten):
+  http://192.168.1.116:8080/dashboard.html
+
+Status:
+  ✅ Server läuft auf Port 8080
+
+Zugriff:
+  - Öffne im Browser eine der URLs oben
+  - Dashboard aktualisiert sich automatisch alle 5 Minuten
+  - Klicke auf "🔄 Aktualisieren" für manuelle Aktualisierung
+
+Daten:
+  - Dashboard-Daten: dashboard_data.json
+  - Aktualisieren: python3 scripts/dashboard_system.py
+

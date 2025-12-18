@@ -1,0 +1,66 @@
+# Du bist bereits im "cursor project" Verzeichnis
+cat > .gitignore << 'EOF'
+# Dependencies
+node_modules/
+package-lock.json
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+*.env
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+
+# Build outputs
+dist/
+build/
+*.egg-info/
+.eggs/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.cache
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Coverage reports
+coverage/
+.nyc_output/
+*.lcov
+EOF
+kids-ai-all-in/apps/*/.git/

@@ -1,0 +1,9 @@
+# Für jedes App-Verzeichnis ein Git-Repository erstellen
+for app in kids-ai-all-in/apps/*/; do
+  if [ -d "$app" ]; then
+    echo "Initialisiere Git in: $app"
+    cd "$app"
+    git init
+    cd ../../..
+  fi
+done
