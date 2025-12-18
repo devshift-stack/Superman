@@ -1,7 +1,15 @@
 # ⚡ FRAGEN & ANTWORTEN - KURZ
 
 **Erstellt:** 18. Dezember 2024  
-**Letzte Aktualisierung:** 18. Dezember 2024, 16:50 Uhr
+### Frage 73: Erkläre mir Arena Modus bei KI Agenten
+
+**Frage:** 18.12.2024 ~17:30 | **Antwort:** 18.12.2024 ~17:35
+
+**Kurze Antwort:** Arena Modus = Vergleichs-System, bei dem mehrere KI-Agenten gegeneinander antreten (gleiche Aufgabe, Ergebnisse vergleichen, Gewinner identifizieren). Bekanntes Beispiel: Chatbot Arena (LMSYS). **Vorteile:** Objektive Bewertung, Stärken/Schwächen identifizieren, kontinuierliche Verbesserung. **Nachteile:** Doppelte Kosten/Zeit, subjektive Bewertungen. **Für dein Projekt:** Sinnvoll als optionales Feature für Qualitätssicherung und automatische Agent-Optimierung.
+
+---
+
+**Letzte Aktualisierung:** 18. Dezember 2024, 17:35 Uhr
 
 ---
 
