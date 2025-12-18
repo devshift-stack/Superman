@@ -41,7 +41,15 @@
 
 ---
 
-**Letzte Aktualisierung:** 18. Dezember 2024, 18:30 Uhr
+### Frage 78: WhatsApp/Viber QR-Scan vs. Bot API + Knopf-Baukasten
+
+**Frage:** 18.12.2024 ~18:50 | **Antwort:** 18.12.2024 ~18:55
+
+**Kurze Antwort:** ✅ **QR-Scan (dein Ansatz) ist besser!** Dein persönliches WhatsApp/Viber, kostenlos, sofort verfügbar. **Bot API** = Separater Bot-Account (für Unternehmen). **Viber Bot** = Automatisierter Account (nicht dein persönliches Viber). **Knopf-Baukasten:** NICHT nötig! KI ist flexibler und mächtiger, versteht natürliche Sprache. Buttons optional - KI kann sie generieren wenn nötig. **Implementierung:** whatsapp-web.js + Viber Desktop API mit QR-Code.
+
+---
+
+**Letzte Aktualisierung:** 18. Dezember 2024, 18:55 Uhr
 
 ---
 
