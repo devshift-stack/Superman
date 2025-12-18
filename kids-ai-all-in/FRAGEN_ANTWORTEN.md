@@ -5034,10 +5034,154 @@ git push
 
 ---
 
+### Frage 76: Und sag mir wann du die Nutzeranleitung für die User machst und den kleinen KI-Coach wenn wir Fragen haben
+
+**Frage gestellt:** 18. Dezember 2024, ~18:10 Uhr  
+**Beantwortet:** 18. Dezember 2024, ~18:15 Uhr
+
+**Antwort:**
+
+## 📋 Nutzeranleitung & KI-Coach - Zeitplan
+
+### **1. Nutzeranleitung für End-User**
+
+**Was ist das:**
+- ✅ Einfache, visuelle Anleitung für normale User
+- ✅ Schritt-für-Schritt Anweisungen
+- ✅ Mit Screenshots/Grafiken
+- ✅ In mehreren Sprachen (Deutsch, Englisch, Bosnisch, Serbisch)
+
+**Wann mache ich das:**
+- ⏳ **Nachdem Supervisor-System fertig ist** (aktuell: ~80% fertig)
+- ⏳ **Nach ersten Tests** (wenn System stabil läuft)
+- ⏳ **Geschätzte Zeit:** 2-3 Stunden (KI-Ausführungszeit)
+
+**Was ich mache:**
+1. ✅ User-Guide Agent erstellen (nutzt Claude für professionelle Dokumentation)
+2. ✅ Anleitung strukturieren (Installation, Nutzung, FAQ)
+3. ✅ Visuelle Elemente hinzufügen (Screenshots, Grafiken)
+4. ✅ Mehrsprachig erstellen (DE, EN, BS, SR)
+5. ✅ In Knowledge Base speichern
+
+**Zeitplan:**
+- ✅ **Jetzt:** Supervisor-System finalisieren (noch ~20%)
+- ⏳ **Dann:** Tests durchführen
+- ⏳ **Danach:** Nutzeranleitung erstellen (2-3h)
+
+---
+
+### **2. KI-Coach für Fragen**
+
+**Was ist das:**
+- ✅ Integrierter Assistent im System
+- ✅ Beantwortet Fragen der User
+- ✅ Erklärt Funktionen
+- ✅ Hilft bei Problemen
+- ✅ Verfügbar über API, Web-Interface, später WhatsApp/Viber
+
+**Wann mache ich das:**
+- ⏳ **Parallel zur Nutzeranleitung** (gleicher Zeitraum)
+- ⏳ **Geschätzte Zeit:** 1-2 Stunden (KI-Ausführungszeit)
+
+**Was ich mache:**
+1. ✅ Coach-Agent erweitern (bereits in AgentRegistry vorhanden)
+2. ✅ Knowledge Base Integration (nutzt Beta/Final System)
+3. ✅ API-Endpoint für Fragen (`/api/coach/ask`)
+4. ✅ Kontext-Awareness (kennt alle System-Funktionen)
+5. ✅ Mehrsprachig (DE, EN, BS, SR)
+
+**Zeitplan:**
+- ✅ **Jetzt:** Supervisor-System finalisieren
+- ⏳ **Dann:** Coach-Agent implementieren (1-2h)
+- ⏳ **Parallel:** Nutzeranleitung erstellen
+
+---
+
+## 🎯 Aktueller Status & Prioritäten
+
+### **Was ist FERTIG (80%):**
+- ✅ Supervisor-Kern-System
+- ✅ API-Integrationen (OpenAI, Claude, Grok, Gemini)
+- ✅ Knowledge Base (Beta/Final System)
+- ✅ Express-Server mit REST API
+- ✅ Tests (Jest konfiguriert)
+- ✅ GitHub Actions CI
+
+### **Was fehlt noch (20%):**
+- ⏳ **UI-Agent** (Shadcn UI Integration)
+- ⏳ **Coach-Agent** (Fragen beantworten)
+- ⏳ **User-Guide Agent** (Anleitungen erstellen)
+- ⏳ **Mobile Integration** (WhatsApp, Viber)
+- ⏳ **Dashboard** (Web-Interface)
+
+---
+
+## 📅 Detaillierter Zeitplan
+
+### **Phase 1: Supervisor-System finalisieren (JETZT)**
+- ⏳ **Dauer:** ~1-2 Stunden
+- ⏳ **Was:** UI-Agent, kleine Fixes, Tests
+- ⏳ **Status:** In Arbeit
+
+### **Phase 2: Coach-Agent implementieren**
+- ⏳ **Dauer:** 1-2 Stunden
+- ⏳ **Was:** 
+  - Coach-Agent erweitern
+  - Knowledge Base Integration
+  - API-Endpoints
+  - Mehrsprachig
+- ⏳ **Start:** Nach Phase 1
+
+### **Phase 3: User-Guide Agent & Anleitung**
+- ⏳ **Dauer:** 2-3 Stunden
+- ⏳ **Was:**
+  - User-Guide Agent implementieren
+  - Anleitung erstellen (DE, EN, BS, SR)
+  - Visuelle Elemente
+  - In Knowledge Base speichern
+- ⏳ **Start:** Parallel zu Phase 2
+
+### **Phase 4: Testing & Deployment**
+- ⏳ **Dauer:** 1 Stunde
+- ⏳ **Was:**
+  - Alles testen
+  - Railway Deployment prüfen
+  - Dokumentation finalisieren
+- ⏳ **Start:** Nach Phase 2 & 3
+
+---
+
+## ✅ Zusammenfassung
+
+**Nutzeranleitung:**
+- ⏳ **Wann:** Nach Supervisor-System fertig (~2-3h nach System-Fertigstellung)
+- ✅ **Was:** Einfache, visuelle Anleitung in mehreren Sprachen
+- ✅ **Wer:** User-Guide Agent (Claude-basiert)
+
+**KI-Coach:**
+- ⏳ **Wann:** Parallel zur Nutzeranleitung (~1-2h)
+- ✅ **Was:** Integrierter Assistent für Fragen
+- ✅ **Wer:** Coach-Agent (bereits vorhanden, wird erweitert)
+
+**Aktueller Stand:**
+- ✅ Supervisor-System: ~80% fertig
+- ⏳ Coach & User-Guide: Noch nicht gestartet
+- ⏳ Geschätzte Gesamtzeit: 4-6 Stunden (KI-Ausführungszeit)
+
+**Nächste Schritte:**
+1. ✅ Supervisor-System finalisieren (JETZT)
+2. ⏳ Coach-Agent implementieren (1-2h)
+3. ⏳ User-Guide & Anleitung erstellen (2-3h)
+4. ⏳ Alles testen & deployen (1h)
+
+**Kurz:** Nutzeranleitung kommt nach Supervisor-System fertig (~2-3h), KI-Coach parallel (~1-2h). Aktuell: Supervisor-System ~80% fertig, dann Coach & User-Guide. Geschätzte Gesamtzeit: 4-6 Stunden.
+
+---
+
 ## 📝 Neue Fragen
 
 _Hier kannst du neue Fragen notieren_
 
 ---
 
-**Letzte Aktualisierung:** 18. Dezember 2024, 18:05 Uhr
+**Letzte Aktualisierung:** 18. Dezember 2024, 18:15 Uhr

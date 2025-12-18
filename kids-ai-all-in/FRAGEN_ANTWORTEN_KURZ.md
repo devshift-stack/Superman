@@ -25,7 +25,15 @@
 
 ---
 
-**Letzte Aktualisierung:** 18. Dezember 2024, 18:05 Uhr
+### Frage 76: Und sag mir wann du die Nutzeranleitung für die User machst und den kleinen KI-Coach wenn wir Fragen haben
+
+**Frage:** 18.12.2024 ~18:10 | **Antwort:** 18.12.2024 ~18:15
+
+**Kurze Antwort:** **Nutzeranleitung:** Nach Supervisor-System fertig (~2-3h). **KI-Coach:** Parallel zur Nutzeranleitung (~1-2h). **Aktuell:** Supervisor-System ~80% fertig, dann Coach & User-Guide. **Zeitplan:** 1. Supervisor finalisieren (JETZT), 2. Coach-Agent (1-2h), 3. User-Guide & Anleitung (2-3h), 4. Testing (1h). **Gesamt:** 4-6 Stunden.
+
+---
+
+**Letzte Aktualisierung:** 18. Dezember 2024, 18:15 Uhr
 
 ---
 
