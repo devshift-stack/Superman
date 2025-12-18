@@ -17,7 +17,15 @@
 
 ---
 
-**Letzte Aktualisierung:** 18. Dezember 2024, 17:55 Uhr
+### Frage 75: Wieso sind hier ein paar rote X und manche grün? Was hat das zu bedeuten? Und müsstest du hier nicht ein PR machen oder bleibt das so?
+
+**Frage:** 18.12.2024 ~18:00 | **Antwort:** 18.12.2024 ~18:05
+
+**Kurze Antwort:** **Rote X (❌) = Status Check fehlgeschlagen** (oft weil keine GitHub Actions konfiguriert). **Grünes Häkchen (✅) = Status Check erfolgreich**. **PRs:** Aktuell direkt auf `main` ist OK (Solo-Entwicklung), PRs sind optional für bessere Organisation. **Status-Checks beheben:** GitHub Actions Workflow erstellen (`.github/workflows/ci.yml`) oder Checks ignorieren wenn nicht wichtig.
+
+---
+
+**Letzte Aktualisierung:** 18. Dezember 2024, 18:05 Uhr
 
 ---
 
