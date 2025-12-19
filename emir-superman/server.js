@@ -15,6 +15,25 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
+/**
+ * Request Validation Middleware
+ * Prüft Content-Type für POST/PUT/PATCH Requests
+ */
+const validateRequest = (req, res, next) => {
+  // Prüfe Content-Type für POST/PUT/PATCH
+  if (['POST', 'PUT', 'PATCH'].includes(req.method)) {
+    if (req.get('Content-Type') && !req.is('application/json')) {
+      return res.status(400).json({
+        error: 'Ungültiger Content-Type',
+        message: 'Content-Type muss application/json sein'
+      });
+    }
+  }
+  next();
+};
+
+app.use(validateRequest);
+
 // Supervisor Instance
 let supervisor = null;
 
@@ -30,8 +49,9 @@ async function initializeSupervisor() {
     await supervisor.initialize();
     console.log('✅ Supervisor initialisiert');
   } catch (error) {
-    console.error('❌ Fehler beim Initialisieren des Supervisors:', error);
-    throw error;
+    console.error('⚠️ Supervisor konnte nicht initialisiert werden:', error.message);
+    console.warn('⚠️ Server läuft im eingeschränkten Modus (nur Health Check)');
+    supervisor = null;
   }
 }
 
@@ -196,26 +216,126 @@ app.get('/api/knowledge/stats', async (req, res) => {
   }
 });
 
-// Error Handling
+// ============================================
+// ERROR HANDLING
+// ============================================
+
+/**
+ * JSON Parse Error Handler
+ */
 app.use((err, req, res, next) => {
-  console.error('❌ Server Fehler:', err);
-  res.status(500).json({ error: 'Interner Serverfehler' });
+  if (err instanceof SyntaxError && err.status === 400 && 'body' in err) {
+    return res.status(400).json({
+      error: 'Ungültiges JSON',
+      message: 'Die Anfrage enthält kein gültiges JSON-Format',
+      details: err.message
+    });
+  }
+  next(err);
+});
+
+
+/**
+ * 404 Handler - Route nicht gefunden
+ */
+app.use((req, res) => {
+  res.status(404).json({
+    error: 'Route nicht gefunden',
+    message: `Die Route ${req.method} ${req.path} existiert nicht`,
+    path: req.path,
+    method: req.method,
+    timestamp: new Date().toISOString()
+  });
+});
+
+/**
+ * Globaler Error Handler
+ */
+app.use((err, req, res, next) => {
+  // Log Error mit Details
+  console.error('❌ Server Fehler:', {
+    message: err.message,
+    stack: err.stack,
+    path: req.path,
+    method: req.method,
+    ip: req.ip,
+    timestamp: new Date().toISOString()
+  });
+
+  // Bestimme Status Code
+  const statusCode = err.statusCode || err.status || 500;
+
+  // Strukturierte Error Response
+  const errorResponse = {
+    error: err.name || 'Interner Serverfehler',
+    message: err.message || 'Ein unerwarteter Fehler ist aufgetreten',
+    timestamp: new Date().toISOString(),
+    path: req.path,
+    method: req.method
+  };
+
+  // In Development: Stack Trace hinzufügen
+  if (process.env.NODE_ENV === 'development') {
+    errorResponse.stack = err.stack;
+  }
+
+  res.status(statusCode).json(errorResponse);
+});
+
+/**
+ * Unhandled Promise Rejection Handler
+ */
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('❌ Unhandled Promise Rejection:', {
+    reason: reason instanceof Error ? reason.message : reason,
+    stack: reason instanceof Error ? reason.stack : undefined,
+    timestamp: new Date().toISOString()
+  });
+  
+  // In Production: Server nicht abstürzen lassen
+  if (process.env.NODE_ENV === 'production') {
+    console.warn('⚠️ Server läuft weiter trotz unhandled rejection');
+  } else {
+    // In Development: Prozess beenden für besseres Debugging
+    process.exit(1);
+  }
+});
+
+/**
+ * Uncaught Exception Handler
+ */
+process.on('uncaughtException', (error) => {
+  console.error('❌ Uncaught Exception:', {
+    message: error.message,
+    stack: error.stack,
+    timestamp: new Date().toISOString()
+  });
+  
+  // Graceful Shutdown
+  if (supervisor) {
+    supervisor.shutdown().then(() => {
+      process.exit(1);
+    }).catch(() => {
+      process.exit(1);
+    });
+  } else {
+    process.exit(1);
+  }
 });
 
 // Start Server
 async function start() {
-  try {
-    await initializeSupervisor();
-    
-    app.listen(PORT, () => {
-      console.log(`🚀 Server läuft auf Port ${PORT}`);
-      console.log(`📊 API verfügbar unter: http://localhost:${PORT}/api`);
-      console.log(`💚 Health Check: http://localhost:${PORT}/health`);
-    });
-  } catch (error) {
-    console.error('❌ Fehler beim Starten des Servers:', error);
-    process.exit(1);
-  }
+  // Initialisiere Supervisor (non-blocking - Server startet auch ohne)
+  await initializeSupervisor();
+  
+  app.listen(PORT, () => {
+    console.log(`🚀 Server läuft auf Port ${PORT}`);
+    console.log(`📊 API verfügbar unter: http://localhost:${PORT}/api`);
+    console.log(`💚 Health Check: http://localhost:${PORT}/health`);
+    if (!supervisor) {
+      console.warn('⚠️ Supervisor nicht verfügbar - einige Endpoints funktionieren nicht');
+    }
+  });
 }
 
 // Graceful Shutdown
