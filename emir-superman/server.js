@@ -120,16 +120,55 @@ app.post('/api/tasks', async (req, res) => {
   }
 });
 
+app.get('/api/tasks', async (req, res) => {
+  try {
+    if (!supervisor) {
+      return res.status(503).json({ error: 'Supervisor nicht initialisiert' });
+    }
+    const queueStatus = await supervisor.taskQueue.getStatus();
+    const activeTasks = Array.from(supervisor.activeTasks.entries()).map(([id, task]) => ({
+      id,
+      type: task.type,
+      status: 'active',
+      createdAt: task.createdAt || new Date().toISOString()
+    }));
+    
+    res.json({
+      queue: queueStatus,
+      active: activeTasks,
+      total: queueStatus.total + activeTasks.length
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 app.get('/api/tasks/:taskId', async (req, res) => {
   try {
     if (!supervisor) {
       return res.status(503).json({ error: 'Supervisor nicht initialisiert' });
     }
-    const task = supervisor.activeTasks.get(req.params.taskId);
-    if (!task) {
-      return res.status(404).json({ error: 'Task nicht gefunden' });
+    
+    // Prüfe zuerst in activeTasks
+    const activeTask = supervisor.activeTasks.get(req.params.taskId);
+    if (activeTask) {
+      return res.json({
+        id: req.params.taskId,
+        ...activeTask,
+        status: 'active'
+      });
     }
-    res.json(task);
+    
+    // Prüfe in Task Queue
+    const jobStatus = await supervisor.taskQueue.getJobStatus(req.params.taskId);
+    if (jobStatus) {
+      return res.json({
+        id: req.params.taskId,
+        status: jobStatus
+      });
+    }
+    
+    return res.status(404).json({ error: 'Task nicht gefunden' });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
