@@ -291,6 +291,17 @@
                     </div>
                 </div>
                 
+                <!-- Arena Pro+ Option -->
+                <div class="form-group" style="margin-top: 15px;">
+                    <label style="display: flex; align-items: center; cursor: pointer;">
+                        <input type="checkbox" id="useArenaPro" style="margin-right: 10px; width: auto;">
+                        <span><strong>🎯 Arena Pro+ Modus</strong> - Agenten arbeiten als Team zusammen</span>
+                    </label>
+                    <small style="color: #666; display: block; margin-top: 5px;">
+                        Aufgaben werden in Teilaufgaben aufgeteilt, Modelle arbeiten kollaborativ und kombinieren die besten Teile
+                    </small>
+                </div>
+                
                 <!-- Erweiterte Optionen (ausklappbar) -->
                 <details style="margin-top: 15px;">
                     <summary style="cursor: pointer; color: #667eea; font-weight: 500;">⚙️ Erweiterte Optionen (JSON)</summary>
@@ -304,12 +315,34 @@
                 <button type="submit" class="btn">✅ Task erstellen</button>
             </form>
         </div>
+        
+        <!-- Chat-Modul -->
+        <div class="card" style="margin-top: 20px;">
+            <h2>💬 Agent-Chat</h2>
+            <div id="chatContainer" style="height: 400px; overflow-y: auto; background: #f9fafb; padding: 15px; border-radius: 5px; margin-bottom: 15px;">
+                <div class="loading">Verbinde mit Chat...</div>
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <input type="text" id="chatInput" placeholder="Nachricht an Agenten..." style="flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 5px;" onkeypress="if(event.key === 'Enter') sendChatMessage()">
+                <button class="btn" onclick="sendChatMessage()">Senden</button>
+            </div>
+            <div style="margin-top: 10px;">
+                <label style="display: flex; align-items: center; cursor: pointer;">
+                    <input type="checkbox" id="chatNotifications" checked style="margin-right: 10px; width: auto;">
+                    <span>🔔 Benachrichtigungen aktiv (1x pro Nachricht, nicht 10x)</span>
+                </label>
+            </div>
+        </div>
     </div>
     
     <button class="refresh-btn" onclick="refreshAll()">🔄 Aktualisieren</button>
     
+    <script src="/socket.io/socket.io.js"></script>
     <script>
         const API_BASE = window.location.origin;
+        let socket = null;
+        let currentCollaborationId = null;
+        let notificationSent = false; // Verhindert mehrfache Benachrichtigungen
         
         // Server Status prüfen
         async function checkServerStatus() {
@@ -497,6 +530,7 @@
             event.preventDefault();
             
             const type = document.getElementById('taskType').value;
+            const useArenaPro = document.getElementById('useArenaPro').checked;
             
             // Sammle Daten aus Formular-Feldern
             let data = {};
@@ -548,15 +582,26 @@
                     },
                     body: JSON.stringify({
                         type,
-                        data
+                        data,
+                        useArenaPro
                     })
                 });
                 
                 const result = await response.json();
                 
                 if (response.ok) {
-                    showAlert(`✅ Task erstellt: ${result.taskId}`, 'success');
+                    if (useArenaPro && result.collaboration) {
+                        currentCollaborationId = result.collaboration.collaborationId;
+                        if (socket) {
+                            socket.emit('subscribe_collaboration', currentCollaborationId);
+                        }
+                        showAlert(`🎯 Arena Pro+ gestartet: ${result.taskId}`, 'success');
+                        addChatMessage('system', '🚀 Arena Pro+ Kollaboration gestartet! Agenten arbeiten jetzt als Team zusammen.');
+                    } else {
+                        showAlert(`✅ Task erstellt: ${result.taskId}`, 'success');
+                    }
                     document.getElementById('taskForm').reset();
+                    document.getElementById('useArenaPro').checked = false;
                     updateTaskFields(); // Felder zurücksetzen
                     loadTasks();
                     loadTaskQueue();
@@ -566,6 +611,105 @@
             } catch (error) {
                 showAlert(`❌ Fehler: ${error.message}`, 'error');
             }
+        }
+        
+        // Chat-Funktionen
+        function initChat() {
+            if (typeof io === 'undefined') {
+                console.error('Socket.IO nicht geladen');
+                document.getElementById('chatContainer').innerHTML = '<div class="alert error">Chat nicht verfügbar (Socket.IO fehlt)</div>';
+                return;
+            }
+            
+            socket = io();
+            
+            socket.on('connect', () => {
+                addChatMessage('system', '✅ Mit Chat verbunden');
+                console.log('Chat verbunden');
+            });
+            
+            socket.on('chat', (data) => {
+                const type = data.type || 'agent';
+                const message = data.message || '';
+                const agent = data.agent || 'System';
+                
+                addChatMessage(type, message, agent);
+                
+                // Benachrichtigung (nur 1x, nicht 10x)
+                if (document.getElementById('chatNotifications').checked && !notificationSent) {
+                    showNotification(message);
+                    notificationSent = true;
+                    setTimeout(() => { notificationSent = false; }, 5000); // Reset nach 5 Sekunden
+                }
+            });
+            
+            socket.on('arena_pro_started', (data) => {
+                currentCollaborationId = data.collaborationId;
+                socket.emit('subscribe_collaboration', currentCollaborationId);
+                addChatMessage('system', `🎯 Arena Pro+ Kollaboration gestartet: ${data.collaborationId}`);
+            });
+            
+            socket.on('disconnect', () => {
+                addChatMessage('system', '❌ Chat-Verbindung getrennt');
+            });
+        }
+        
+        function addChatMessage(type, message, agent = '') {
+            const container = document.getElementById('chatContainer');
+            
+            // Entferne "Lädt..." wenn vorhanden
+            if (container.querySelector('.loading')) {
+                container.innerHTML = '';
+            }
+            
+            const messageDiv = document.createElement('div');
+            messageDiv.style.cssText = 'margin-bottom: 10px; padding: 10px; border-radius: 5px; background: ' + 
+                (type === 'user' ? '#e3f2fd' : type === 'agent' ? '#f3e5f5' : '#fff3e0') + ';';
+            
+            const timestamp = new Date().toLocaleTimeString('de-DE');
+            messageDiv.innerHTML = `
+                <div style="font-size: 12px; color: #666; margin-bottom: 5px;">
+                    ${type === 'user' ? '👤 Du' : type === 'agent' ? `🤖 ${agent}` : '⚙️ System'} - ${timestamp}
+                </div>
+                <div style="color: #333;">${message}</div>
+            `;
+            
+            container.appendChild(messageDiv);
+            container.scrollTop = container.scrollHeight;
+        }
+        
+        function sendChatMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            
+            if (!message) return;
+            
+            if (!socket || !socket.connected) {
+                showAlert('Chat nicht verbunden', 'error');
+                return;
+            }
+            
+            socket.emit('chat', {
+                message,
+                collaborationId: currentCollaborationId
+            });
+            
+            input.value = '';
+        }
+        
+        function showNotification(message) {
+            // Browser-Benachrichtigung (nur wenn erlaubt)
+            if ('Notification' in window && Notification.permission === 'granted') {
+                new Notification('Supervisor Chat', {
+                    body: message,
+                    icon: '/favicon.ico'
+                });
+            }
+        }
+        
+        // Benachrichtigungs-Berechtigung anfordern
+        if ('Notification' in window && Notification.permission === 'default') {
+            Notification.requestPermission();
         }
         
         // Alert anzeigen
@@ -593,6 +737,7 @@
         // Initialisierung
         window.onload = function() {
             updateTaskFields(); // Felder initialisieren
+            initChat(); // Chat initialisieren
             refreshAll();
             // Auto-Refresh alle 30 Sekunden
             setInterval(refreshAll, 30000);

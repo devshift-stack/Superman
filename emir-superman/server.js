@@ -6,9 +6,20 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const http = require('http');
+const { Server } = require('socket.io');
 const Supervisor = require('./supervisor/src/Supervisor');
+const ArenaProMode = require('./supervisor/src/ArenaProMode');
 
 const app = express();
+const server = http.createServer(app);
+const io = new Server(server, {
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"]
+  }
+});
+
 const PORT = process.env.PORT || 3000;
 
 // Middleware
@@ -50,7 +61,13 @@ async function initializeSupervisor() {
       dbPath: process.env.DB_PATH || './data/sessions.db',
     });
     await supervisor.initialize();
+    supervisor.io = io; // WebSocket für Chat
+    
+    // Arena Pro+ initialisieren
+    arenaPro = new ArenaProMode(supervisor);
+    
     console.log('✅ Supervisor initialisiert');
+    console.log('✅ Arena Pro+ Modus aktiviert');
   } catch (error) {
     console.error('⚠️ Supervisor konnte nicht initialisiert werden:', error.message);
     console.warn('⚠️ Server läuft im eingeschränkten Modus (nur Health Check)');
@@ -408,15 +425,48 @@ process.on('uncaughtException', (error) => {
   }
 });
 
+// Arena Pro+ Endpoints
+app.post('/api/arena-pro/start', async (req, res) => {
+  try {
+    if (!arenaPro) {
+      return res.status(503).json({ error: 'Arena Pro+ nicht verfügbar' });
+    }
+    
+    const collaboration = await arenaPro.startCollaboration(req.body);
+    res.json(collaboration);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get('/api/arena-pro/:collaborationId', async (req, res) => {
+  try {
+    if (!arenaPro) {
+      return res.status(503).json({ error: 'Arena Pro+ nicht verfügbar' });
+    }
+    
+    const status = arenaPro.getCollaborationStatus(req.params.collaborationId);
+    if (!status) {
+      return res.status(404).json({ error: 'Kollaboration nicht gefunden' });
+    }
+    
+    res.json(status);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 // Start Server
 async function start() {
   // Initialisiere Supervisor (non-blocking - Server startet auch ohne)
   await initializeSupervisor();
   
-  app.listen(PORT, () => {
+  server.listen(PORT, () => {
     console.log(`🚀 Server läuft auf Port ${PORT}`);
     console.log(`📊 API verfügbar unter: http://localhost:${PORT}/api`);
     console.log(`💚 Health Check: http://localhost:${PORT}/health`);
+    console.log(`💬 WebSocket Chat aktiv auf Port ${PORT}`);
+    console.log(`🎯 Arena Pro+ Modus aktiviert`);
     if (!supervisor) {
       console.warn('⚠️ Supervisor nicht verfügbar - einige Endpoints funktionieren nicht');
     }

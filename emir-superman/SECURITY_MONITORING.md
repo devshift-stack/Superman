@@ -33,7 +33,7 @@
 
 ### Option 1: CrowdSec (Empfohlen)
 
-```bash
+```bash  h
 # Auf Server
 export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/YOUR/WEBHOOK/URL"
 export MONITORING_TYPE="crowdsec"
