@@ -152,6 +152,20 @@ class SessionManager {
   }
 
   /**
+   * Gibt alle Sessions zurück
+   */
+  async getAllSessions() {
+    const sessions = await this.db.all(
+      'SELECT * FROM sessions ORDER BY updatedAt DESC'
+    );
+
+    return sessions.map(session => ({
+      ...session,
+      metadata: JSON.parse(session.metadata || '{}')
+    }));
+  }
+
+  /**
    * Schließt die Datenbank
    */
   async close() {

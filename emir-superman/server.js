@@ -177,6 +177,49 @@ app.get('/api/tasks/:taskId', async (req, res) => {
   }
 });
 
+// Task-Ergebnisse abrufen
+app.get('/api/tasks/:taskId/result', async (req, res) => {
+  try {
+    if (!supervisor) {
+      return res.status(503).json({ error: 'Supervisor nicht initialisiert' });
+    }
+    
+    const taskId = req.params.taskId;
+    
+    // Prüfe in Sessions (Ergebnisse werden dort gespeichert)
+    const sessions = await supervisor.sessionManager.getAllSessions();
+    for (const session of sessions) {
+      if (session.metadata && session.metadata.lastTask === taskId) {
+        return res.json({
+          taskId,
+          result: session.metadata.lastResult,
+          sessionId: session.id,
+          completedAt: session.updatedAt
+        });
+      }
+    }
+    
+    // Prüfe in Task Queue (falls noch in Bearbeitung)
+    const jobStatus = await supervisor.taskQueue.getJobStatus(taskId);
+    if (jobStatus === 'completed') {
+      // Versuche Job-Daten abzurufen
+      const { Job } = require('bullmq');
+      const job = await Job.fromId(supervisor.taskQueue.queue, taskId);
+      if (job && job.returnvalue) {
+        return res.json({
+          taskId,
+          result: job.returnvalue,
+          status: 'completed'
+        });
+      }
+    }
+    
+    return res.status(404).json({ error: 'Task-Ergebnis nicht gefunden' });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 // Session Management
 app.post('/api/sessions', async (req, res) => {
   try {
