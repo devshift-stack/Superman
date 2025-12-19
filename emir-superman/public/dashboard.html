@@ -446,16 +446,47 @@
             event.preventDefault();
             
             const type = document.getElementById('taskType').value;
-            const dataText = document.getElementById('taskData').value;
             
+            // Sammle Daten aus Formular-Feldern
             let data = {};
+            
+            // Standard-Felder
+            const topic = document.getElementById('fieldTopic')?.value;
+            const language = document.getElementById('fieldLanguage')?.value;
+            
+            if (topic) data.topic = topic;
+            if (language) data.language = language;
+            
+            // Typ-spezifische Felder
+            if (type === 'generate-ui') {
+                const component = document.getElementById('fieldComponent')?.value;
+                const style = document.getElementById('fieldStyle')?.value;
+                if (component) data.component = component;
+                if (style) data.style = style;
+            } else if (type === 'write-docs') {
+                const docType = document.getElementById('fieldDocType')?.value;
+                if (docType) data.docType = docType;
+            } else if (type === 'research') {
+                const depth = document.getElementById('fieldDepth')?.value;
+                if (depth) data.depth = depth;
+            }
+            
+            // Zusätzliche JSON-Daten (falls vorhanden)
+            const dataText = document.getElementById('taskData').value;
             if (dataText) {
                 try {
-                    data = JSON.parse(dataText);
+                    const additionalData = JSON.parse(dataText);
+                    data = { ...data, ...additionalData };
                 } catch (e) {
-                    showAlert('Ungültiges JSON-Format', 'error');
+                    showAlert('Ungültiges JSON-Format in erweiterten Optionen', 'error');
                     return;
                 }
+            }
+            
+            // Prüfe ob mindestens Topic vorhanden ist
+            if (!data.topic && type !== 'help') {
+                showAlert('Bitte gib mindestens ein Topic/Thema ein', 'error');
+                return;
             }
             
             try {
@@ -473,15 +504,16 @@
                 const result = await response.json();
                 
                 if (response.ok) {
-                    showAlert(`Task erstellt: ${result.taskId}`, 'success');
+                    showAlert(`✅ Task erstellt: ${result.taskId}`, 'success');
                     document.getElementById('taskForm').reset();
+                    updateTaskFields(); // Felder zurücksetzen
                     loadTasks();
                     loadTaskQueue();
                 } else {
-                    showAlert(`Fehler: ${result.error || result.message}`, 'error');
+                    showAlert(`❌ Fehler: ${result.error || result.message}`, 'error');
                 }
             } catch (error) {
-                showAlert(`Fehler: ${error.message}`, 'error');
+                showAlert(`❌ Fehler: ${error.message}`, 'error');
             }
         }
         
