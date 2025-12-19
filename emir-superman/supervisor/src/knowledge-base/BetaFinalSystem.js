@@ -20,8 +20,12 @@ class BetaFinalSystem {
     }
 
     await this.pinecone.initialize();
-    this.isInitialized = true;
-    console.log('✅ Beta/Final System initialisiert');
+    this.isInitialized = this.pinecone.isInitialized;
+    if (this.isInitialized) {
+      console.log('✅ Beta/Final System initialisiert');
+    } else {
+      console.warn('⚠️ Beta/Final System deaktiviert (Pinecone nicht konfiguriert)');
+    }
   }
 
   /**

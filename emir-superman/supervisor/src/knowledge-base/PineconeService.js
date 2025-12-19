@@ -24,7 +24,9 @@ class PineconeService {
     }
 
     if (!this.apiKey) {
-      throw new Error('PINECONE_API_KEY ist nicht gesetzt');
+      console.warn('⚠️ PINECONE_API_KEY nicht gesetzt - Knowledge Base deaktiviert');
+      this.isInitialized = false;
+      return;
     }
 
     try {
@@ -89,6 +91,10 @@ class PineconeService {
     if (!this.isInitialized) {
       await this.initialize();
     }
+    
+    if (!this.isInitialized) {
+      throw new Error('Pinecone Service nicht initialisiert. Bitte PINECONE_API_KEY setzen.');
+    }
 
     try {
       const id = uuidv4();
@@ -123,6 +129,10 @@ class PineconeService {
   async search(query, options = {}) {
     if (!this.isInitialized) {
       await this.initialize();
+    }
+    
+    if (!this.isInitialized) {
+      throw new Error('Pinecone Service nicht initialisiert. Bitte PINECONE_API_KEY setzen.');
     }
 
     const {
@@ -196,6 +206,10 @@ class PineconeService {
     if (!this.isInitialized) {
       await this.initialize();
     }
+    
+    if (!this.isInitialized) {
+      throw new Error('Pinecone Service nicht initialisiert. Bitte PINECONE_API_KEY setzen.');
+    }
 
     try {
       // Hole aktuellen Record
@@ -231,6 +245,10 @@ class PineconeService {
     if (!this.isInitialized) {
       await this.initialize();
     }
+    
+    if (!this.isInitialized) {
+      throw new Error('Pinecone Service nicht initialisiert. Bitte PINECONE_API_KEY setzen.');
+    }
 
     try {
       await this.index.delete1([id]);
@@ -257,6 +275,10 @@ class PineconeService {
   async getStats() {
     if (!this.isInitialized) {
       await this.initialize();
+    }
+    
+    if (!this.isInitialized) {
+      return { message: 'Knowledge Base nicht initialisiert (PINECONE_API_KEY fehlt)', total: 0, beta: 0, final: 0 };
     }
 
     try {
