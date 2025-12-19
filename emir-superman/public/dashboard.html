@@ -264,19 +264,44 @@
             <form id="taskForm" onsubmit="createTask(event)">
                 <div class="form-group">
                     <label>Task-Typ:</label>
-                    <select id="taskType" required>
-                        <option value="write-docs">Dokumentation schreiben</option>
-                        <option value="generate-ui">UI generieren</option>
-                        <option value="create-guides">Guide erstellen</option>
-                        <option value="help">Hilfe</option>
-                        <option value="research">Recherche</option>
+                    <select id="taskType" required onchange="updateTaskFields()">
+                        <option value="write-docs">📝 Dokumentation schreiben</option>
+                        <option value="generate-ui">🎨 UI generieren</option>
+                        <option value="create-guides">📖 Guide erstellen</option>
+                        <option value="help">❓ Hilfe</option>
+                        <option value="research">🔍 Recherche</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label>Daten (JSON):</label>
-                    <textarea id="taskData" placeholder='{"topic": "API-Dokumentation", "language": "de"}'></textarea>
+                
+                <!-- Dynamische Felder basierend auf Task-Typ -->
+                <div id="taskFields">
+                    <!-- Standard-Felder -->
+                    <div class="form-group">
+                        <label>Topic/Thema:</label>
+                        <input type="text" id="fieldTopic" placeholder="z.B. API-Dokumentation, Button-Komponente, etc.">
+                    </div>
+                    <div class="form-group">
+                        <label>Sprache:</label>
+                        <select id="fieldLanguage">
+                            <option value="de">Deutsch</option>
+                            <option value="en">English</option>
+                            <option value="bs">Bosanski</option>
+                            <option value="sr">Srpski</option>
+                        </select>
+                    </div>
                 </div>
-                <button type="submit" class="btn">Task erstellen</button>
+                
+                <!-- Erweiterte Optionen (ausklappbar) -->
+                <details style="margin-top: 15px;">
+                    <summary style="cursor: pointer; color: #667eea; font-weight: 500;">⚙️ Erweiterte Optionen (JSON)</summary>
+                    <div class="form-group" style="margin-top: 10px;">
+                        <label>Zusätzliche Daten (optional, JSON):</label>
+                        <textarea id="taskData" placeholder='{"customField": "value"}' style="font-family: monospace; font-size: 12px;"></textarea>
+                        <small style="color: #666;">Nur ausfüllen, wenn du spezielle Optionen brauchst</small>
+                    </div>
+                </details>
+                
+                <button type="submit" class="btn">✅ Task erstellen</button>
             </form>
         </div>
     </div>
@@ -484,6 +509,7 @@
         
         // Initialisierung
         window.onload = function() {
+            updateTaskFields(); // Felder initialisieren
             refreshAll();
             // Auto-Refresh alle 30 Sekunden
             setInterval(refreshAll, 30000);
