@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supervisor Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .status {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .status.online {
+            background: #10b981;
+            color: white;
+        }
+        
+        .status.offline {
+            background: #ef4444;
+            color: white;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .card h2 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .stat {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .stat:last-child {
+            border-bottom: none;
+        }
+        
+        .stat-label {
+            color: #666;
+        }
+        
+        .stat-value {
+            color: #333;
+            font-weight: bold;
+        }
+        
+        .btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 5px;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #5568d3;
+        }
+        
+        .btn-secondary {
+            background: #6b7280;
+        }
+        
+        .btn-secondary:hover {
+            background: #4b5563;
+        }
+        
+        .task-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .task-item {
+            padding: 10px;
+            background: #f9fafb;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .task-item h3 {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .task-item p {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .alert {
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .alert.success {
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid #10b981;
+        }
+        
+        .alert.error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #ef4444;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+        
+        .refresh-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            font-size: 16px;
+        }
+        
+        .refresh-btn:hover {
+            background: #5568d3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 Supervisor Dashboard</h1>
+            <div>
+                <span class="status" id="serverStatus">Lädt...</span>
+                <span id="serverUrl"></span>
+            </div>
+        </div>
+        
+        <div id="alertContainer"></div>
+        
+        <div class="grid">
+            <!-- System Status -->
+            <div class="card">
+                <h2>📊 System Status</h2>
+                <div id="systemStatus">
+                    <div class="loading">Lädt...</div>
+                </div>
+            </div>
+            
+            <!-- Task Queue -->
+            <div class="card">
+                <h2>📋 Task Queue</h2>
+                <div id="taskQueue">
+                    <div class="loading">Lädt...</div>
+                </div>
+            </div>
+            
+            <!-- Agents -->
+            <div class="card">
+                <h2>🤖 Agents</h2>
+                <div id="agents">
+                    <div class="loading">Lädt...</div>
+                </div>
+                <button class="btn" onclick="loadAgents()">Aktualisieren</button>
+            </div>
+        </div>
+        
+        <!-- Tasks -->
+        <div class="card">
+            <h2>📝 Tasks</h2>
+            <div id="tasks">
+                <div class="loading">Lädt...</div>
+            </div>
+            <button class="btn" onclick="loadTasks()">Aktualisieren</button>
+        </div>
+        
+        <!-- Task erstellen -->
+        <div class="card">
+            <h2>➕ Neue Task erstellen</h2>
+            <form id="taskForm" onsubmit="createTask(event)">
+                <div class="form-group">
+                    <label>Task-Typ:</label>
+                    <select id="taskType" required>
+                        <option value="write-docs">Dokumentation schreiben</option>
+                        <option value="generate-ui">UI generieren</option>
+                        <option value="create-guides">Guide erstellen</option>
+                        <option value="help">Hilfe</option>
+                        <option value="research">Recherche</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Daten (JSON):</label>
+                    <textarea id="taskData" placeholder='{"topic": "API-Dokumentation", "language": "de"}'></textarea>
+                </div>
+                <button type="submit" class="btn">Task erstellen</button>
+            </form>
+        </div>
+    </div>
+    
+    <button class="refresh-btn" onclick="refreshAll()">🔄 Aktualisieren</button>
+    
+    <script>
+        const API_BASE = window.location.origin;
+        
+        // Server Status prüfen
+        async function checkServerStatus() {
+            try {
+                const response = await fetch(`${API_BASE}/health`);
+                const data = await response.json();
+                document.getElementById('serverStatus').textContent = 'Online';
+                document.getElementById('serverStatus').className = 'status online';
+                document.getElementById('serverUrl').textContent = ` | ${API_BASE}`;
+                return true;
+            } catch (error) {
+                document.getElementById('serverStatus').textContent = 'Offline';
+                document.getElementById('serverStatus').className = 'status offline';
+                return false;
+            }
+        }
+        
+        // System Status laden
+        async function loadSystemStatus() {
+            try {
+                const response = await fetch(`${API_BASE}/api/status`);
+                const data = await response.json();
+                
+                const html = `
+                    <div class="stat">
+                        <span class="stat-label">Initialisiert:</span>
+                        <span class="stat-value">${data.initialized ? '✅' : '❌'}</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Aktive Tasks:</span>
+                        <span class="stat-value">${data.activeTasks || 0}</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Registrierte Agents:</span>
+                        <span class="stat-value">${data.registeredAgents || 0}</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Sessions:</span>
+                        <span class="stat-value">${data.sessions || 0}</span>
+                    </div>
+                `;
+                
+                document.getElementById('systemStatus').innerHTML = html;
+            } catch (error) {
+                document.getElementById('systemStatus').innerHTML = `<div class="alert error">Fehler: ${error.message}</div>`;
+            }
+        }
+        
+        // Task Queue laden
+        async function loadTaskQueue() {
+            try {
+                const response = await fetch(`${API_BASE}/api/tasks`);
+                const data = await response.json();
+                
+                const html = `
+                    <div class="stat">
+                        <span class="stat-label">Wartend:</span>
+                        <span class="stat-value">${data.queue?.waiting || 0}</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Aktiv:</span>
+                        <span class="stat-value">${data.queue?.active || 0}</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Abgeschlossen:</span>
+                        <span class="stat-value">${data.queue?.completed || 0}</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Fehlgeschlagen:</span>
+                        <span class="stat-value">${data.queue?.failed || 0}</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Gesamt:</span>
+                        <span class="stat-value">${data.total || 0}</span>
+                    </div>
+                `;
+                
+                document.getElementById('taskQueue').innerHTML = html;
+            } catch (error) {
+                document.getElementById('taskQueue').innerHTML = `<div class="alert error">Fehler: ${error.message}</div>`;
+            }
+        }
+        
+        // Agents laden
+        async function loadAgents() {
+            try {
+                const response = await fetch(`${API_BASE}/api/agents`);
+                const data = await response.json();
+                
+                if (data.length === 0) {
+                    document.getElementById('agents').innerHTML = '<p style="color: #666;">Keine Agents registriert</p>';
+                    return;
+                }
+                
+                const html = data.map(agent => `
+                    <div class="task-item">
+                        <h3>${agent.name || agent.type}</h3>
+                        <p>Typ: ${agent.type} | Status: ${agent.status || 'idle'}</p>
+                    </div>
+                `).join('');
+                
+                document.getElementById('agents').innerHTML = html;
+            } catch (error) {
+                document.getElementById('agents').innerHTML = `<div class="alert error">Fehler: ${error.message}</div>`;
+            }
+        }
+        
+        // Tasks laden
+        async function loadTasks() {
+            try {
+                const response = await fetch(`${API_BASE}/api/tasks`);
+                const data = await response.json();
+                
+                if (data.active && data.active.length === 0) {
+                    document.getElementById('tasks').innerHTML = '<p style="color: #666;">Keine aktiven Tasks</p>';
+                    return;
+                }
+                
+                const html = data.active.map(task => `
+                    <div class="task-item">
+                        <h3>Task: ${task.type}</h3>
+                        <p>ID: ${task.id} | Erstellt: ${new Date(task.createdAt).toLocaleString('de-DE')}</p>
+                    </div>
+                `).join('');
+                
+                document.getElementById('tasks').innerHTML = html;
+            } catch (error) {
+                document.getElementById('tasks').innerHTML = `<div class="alert error">Fehler: ${error.message}</div>`;
+            }
+        }
+        
+        // Task erstellen
+        async function createTask(event) {
+            event.preventDefault();
+            
+            const type = document.getElementById('taskType').value;
+            const dataText = document.getElementById('taskData').value;
+            
+            let data = {};
+            if (dataText) {
+                try {
+                    data = JSON.parse(dataText);
+                } catch (e) {
+                    showAlert('Ungültiges JSON-Format', 'error');
+                    return;
+                }
+            }
+            
+            try {
+                const response = await fetch(`${API_BASE}/api/tasks`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        type,
+                        data
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok) {
+                    showAlert(`Task erstellt: ${result.taskId}`, 'success');
+                    document.getElementById('taskForm').reset();
+                    loadTasks();
+                    loadTaskQueue();
+                } else {
+                    showAlert(`Fehler: ${result.error || result.message}`, 'error');
+                }
+            } catch (error) {
+                showAlert(`Fehler: ${error.message}`, 'error');
+            }
+        }
+        
+        // Alert anzeigen
+        function showAlert(message, type) {
+            const container = document.getElementById('alertContainer');
+            const alert = document.createElement('div');
+            alert.className = `alert ${type}`;
+            alert.textContent = message;
+            container.appendChild(alert);
+            
+            setTimeout(() => {
+                alert.remove();
+            }, 5000);
+        }
+        
+        // Alles aktualisieren
+        async function refreshAll() {
+            await checkServerStatus();
+            await loadSystemStatus();
+            await loadTaskQueue();
+            await loadAgents();
+            await loadTasks();
+        }
+        
+        // Initialisierung
+        window.onload = function() {
+            refreshAll();
+            // Auto-Refresh alle 30 Sekunden
+            setInterval(refreshAll, 30000);
+        };
+    </script>
+</body>
+</html>
+

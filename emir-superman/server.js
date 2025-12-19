@@ -15,6 +15,9 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
+// Statische Dateien (Dashboard)
+app.use(express.static('public'));
+
 /**
  * Request Validation Middleware
  * Prüft Content-Type für POST/PUT/PATCH Requests

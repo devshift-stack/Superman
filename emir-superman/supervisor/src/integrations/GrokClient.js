@@ -8,12 +8,21 @@ class GrokClient {
   constructor() {
     this.apiKey = process.env.GROK_API_KEY;
     this.baseURL = 'https://api.x.ai/v1';
+    this.isConfigured = !!this.apiKey;
+    
+    if (!this.isConfigured) {
+      console.warn('⚠️ GROK_API_KEY nicht gesetzt - Grok Client deaktiviert');
+    }
   }
 
   /**
    * Generiert Text mit Grok
    */
   async generate(prompt, options = {}) {
+    if (!this.isConfigured) {
+      throw new Error('Grok API nicht konfiguriert. Bitte GROK_API_KEY setzen.');
+    }
+    
     try {
       const response = await axios.post(
         `${this.baseURL}/chat/completions`,

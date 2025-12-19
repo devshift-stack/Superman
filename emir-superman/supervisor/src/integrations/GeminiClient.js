@@ -6,19 +6,28 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 
 class GeminiClient {
   constructor() {
-    const apiKey = process.env.GEMINI_API_KEY;
-    if (!apiKey) {
-      console.warn('⚠️ GEMINI_API_KEY nicht gesetzt');
+    this.apiKey = process.env.GEMINI_API_KEY;
+    this.genAI = null;
+    this.isConfigured = !!this.apiKey;
+    
+    if (this.isConfigured) {
+      try {
+        this.genAI = new GoogleGenerativeAI(this.apiKey);
+      } catch (error) {
+        console.warn('⚠️ Gemini Client konnte nicht initialisiert werden:', error.message);
+        this.isConfigured = false;
+      }
+    } else {
+      console.warn('⚠️ GEMINI_API_KEY nicht gesetzt - Gemini Client deaktiviert');
     }
-    this.genAI = apiKey ? new GoogleGenerativeAI(apiKey) : null;
   }
 
   /**
    * Generiert Text mit Gemini
    */
   async generate(prompt, options = {}) {
-    if (!this.genAI) {
-      throw new Error('Gemini API Key nicht gesetzt');
+    if (!this.isConfigured || !this.genAI) {
+      throw new Error('Gemini API nicht konfiguriert. Bitte GEMINI_API_KEY setzen.');
     }
 
     try {
