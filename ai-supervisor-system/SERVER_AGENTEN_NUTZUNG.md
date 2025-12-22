@@ -154,10 +154,15 @@ console.log('Erstellt:', task.createdAt);
 ### ArenaProPlus initialisieren
 
 ```javascript
-const ArenaProMode = require('./supervisor/src/ArenaProMode');
+const ArenaProPlus = require('./supervisor/ArenaProPlus');
 
-// ArenaProPlus mit Supervisor initialisieren
-const arenaPro = new ArenaProMode(supervisor);
+// ArenaProPlus mit AgentManager initialisieren
+const arenaProPlus = new ArenaProPlus(supervisor.agentManager, {
+  maxParallelTasks: 4,
+  synthesisModel: 'creative',  // GPT-4
+  qualityCheckModel: 'coding',  // Claude
+  decomposerModel: 'research'  // Gemini
+});
 ```
 
 ### Kollaboration starten
@@ -180,11 +185,6 @@ console.log('Ergebnis:', result.content);
 console.log('Phasen:', result.phases);
 console.log('Dauer:', result.duration, 'ms');
 console.log('Usage:', result.usage);
-```
-
-console.log('Kollaboration-ID:', collaboration.collaborationId);
-console.log('Ergebnis:', collaboration.result);
-console.log('Prozess:', collaboration.process);
 ```
 
 ### Was passiert im ArenaProPlus-Modus?
