@@ -1,0 +1,423 @@
+=== 1. SSH-LOGIN-ANALYSE ===
+=== ALLE SSH-LOGINS (letzte 7 Tage) ===
+--- Log: /var/log/auth.log ---
+2025-12-18T22:59:55.811763+00:00 crm sshd[3058488]: Invalid user guest from 119.203.251.187 port 33184
+2025-12-18T22:59:58.138458+00:00 crm sshd[3058488]: Failed password for invalid user guest from 119.203.251.187 port 33184 ssh2
+2025-12-18T23:00:46.866985+00:00 crm sshd[3058770]: Invalid user max from 14.103.118.226 port 37550
+2025-12-18T23:00:48.861470+00:00 crm sshd[3058770]: Failed password for invalid user max from 14.103.118.226 port 37550 ssh2
+2025-12-18T23:01:50.634583+00:00 crm sshd[3059102]: Invalid user support from 94.156.152.7 port 55078
+2025-12-18T23:01:52.800488+00:00 crm sshd[3059102]: Failed password for invalid user support from 94.156.152.7 port 55078 ssh2
+2025-12-18T23:01:56.359538+00:00 crm sshd[3059104]: Failed password for root from 14.103.123.87 port 57094 ssh2
+2025-12-18T23:03:19.102773+00:00 crm sshd[3059538]: Invalid user vbox from 119.203.251.187 port 37836
+2025-12-18T23:03:21.102464+00:00 crm sshd[3059538]: Failed password for invalid user vbox from 119.203.251.187 port 37836 ssh2
+2025-12-18T23:03:37.255482+00:00 crm sshd[3059663]: Failed password for root from 160.251.172.221 port 43566 ssh2
+2025-12-18T23:04:08.751659+00:00 crm sshd[3059804]: Invalid user centos from 80.11.139.53 port 51754
+2025-12-18T23:04:11.143580+00:00 crm sshd[3059804]: Failed password for invalid user centos from 80.11.139.53 port 51754 ssh2
+2025-12-18T23:04:16.580280+00:00 crm sshd[3059861]: Invalid user wqadmin from 160.251.172.221 port 44098
+2025-12-18T23:04:19.071454+00:00 crm sshd[3059861]: Failed password for invalid user wqadmin from 160.251.172.221 port 44098 ssh2
+2025-12-18T23:05:22.192291+00:00 crm sshd[3060259]: Accepted publickey for root from 154.47.29.201 port 61104 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:05:51.957449+00:00 crm sshd[3060451]: Failed password for root from 14.103.118.226 port 46864 ssh2
+2025-12-18T23:06:45.241980+00:00 crm sshd[3060749]: Accepted publickey for root from 154.47.29.201 port 61109 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:10:19.358845+00:00 crm sshd[3061970]: Accepted publickey for root from 154.47.29.201 port 61117 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:10:26.630764+00:00 crm sshd[3062067]: Accepted publickey for root from 154.47.29.201 port 61118 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:10:42.231954+00:00 crm sshd[3062257]: Accepted publickey for root from 154.47.29.201 port 61120 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:10:44.409149+00:00 crm sshd[3062548]: Accepted publickey for root from 154.47.29.201 port 61121 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:10:58.529256+00:00 crm sshd[3062755]: Accepted publickey for root from 154.47.29.201 port 61122 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:12:53.570219+00:00 crm sshd[3063432]: Accepted publickey for root from 154.47.29.201 port 61123 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:13:07.088799+00:00 crm sshd[3063597]: Accepted publickey for root from 154.47.29.201 port 61124 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:13:18.634100+00:00 crm sshd[3063740]: Accepted publickey for root from 154.47.29.201 port 61126 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:14:07.217904+00:00 crm sshd[3064076]: Accepted publickey for root from 154.47.29.201 port 61127 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:14:37.716040+00:00 crm sshd[3064290]: Accepted publickey for root from 154.47.29.201 port 61129 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:14:39.345678+00:00 crm sshd[3064364]: Accepted publickey for root from 154.47.29.201 port 61130 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:14:58.347485+00:00 crm sshd[3064543]: Failed password for root from 39.164.104.104 port 34092 ssh2
+2025-12-18T23:15:02.469477+00:00 crm sshd[3064611]: Failed password for root from 39.164.104.104 port 34117 ssh2
+2025-12-18T23:15:07.834476+00:00 crm sshd[3064634]: Failed password for root from 39.164.104.104 port 34142 ssh2
+2025-12-18T23:16:14.440755+00:00 crm sshd[3065005]: Accepted publickey for root from 154.47.29.201 port 61137 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:16:19.944334+00:00 crm sshd[3065095]: Accepted publickey for root from 154.47.29.201 port 61141 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:17:15.808512+00:00 crm sshd[3065484]: Accepted publickey for root from 154.47.29.201 port 61143 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:17:22.509365+00:00 crm sshd[3065578]: Invalid user sina from 115.190.140.2 port 36180
+2025-12-18T23:17:24.569519+00:00 crm sshd[3065578]: Failed password for invalid user sina from 115.190.140.2 port 36180 ssh2
+2025-12-18T23:17:36.801807+00:00 crm sshd[3065642]: Invalid user peter from 38.248.12.102 port 41752
+2025-12-18T23:17:38.450453+00:00 crm sshd[3065642]: Failed password for invalid user peter from 38.248.12.102 port 41752 ssh2
+2025-12-18T23:18:13.712924+00:00 crm sshd[3065878]: Accepted publickey for root from 154.47.29.201 port 61147 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:18:15.061346+00:00 crm sshd[3065976]: Accepted publickey for root from 154.47.29.201 port 61148 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:18:16.229841+00:00 crm sshd[3066124]: Accepted publickey for root from 154.47.29.201 port 61149 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:18:27.599910+00:00 crm sshd[3066301]: Accepted publickey for root from 154.47.29.201 port 61150 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:18:30.014540+00:00 crm sshd[3066502]: Accepted publickey for root from 154.47.29.201 port 61151 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:18:31.055648+00:00 crm sshd[3066588]: Accepted publickey for root from 154.47.29.201 port 61152 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:18:48.091010+00:00 crm sshd[3066833]: Invalid user admin from 38.248.12.102 port 40854
+2025-12-18T23:18:50.291470+00:00 crm sshd[3066833]: Failed password for invalid user admin from 38.248.12.102 port 40854 ssh2
+2025-12-18T23:19:41.445428+00:00 crm sshd[3067045]: Invalid user centos from 125.139.124.120 port 60116
+2025-12-18T23:19:43.254506+00:00 crm sshd[3067045]: Failed password for invalid user centos from 125.139.124.120 port 60116 ssh2
+2025-12-18T23:20:25.172526+00:00 crm sshd[3067276]: Failed password for root from 115.190.140.2 port 35260 ssh2
+2025-12-18T23:20:45.159148+00:00 crm sshd[3067457]: Accepted publickey for root from 154.47.29.201 port 61170 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:20:46.672159+00:00 crm sshd[3067540]: Accepted publickey for root from 154.47.29.201 port 61171 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:20:47.989942+00:00 crm sshd[3067837]: Accepted publickey for root from 154.47.29.201 port 61172 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:20:49.012947+00:00 crm sshd[3067892]: Accepted publickey for root from 154.47.29.201 port 61173 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:20:49.992772+00:00 crm sshd[3067956]: Accepted publickey for root from 154.47.29.201 port 61174 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:20:50.778936+00:00 crm sshd[3068016]: Accepted publickey for root from 154.47.29.201 port 61175 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:20:51.680646+00:00 crm sshd[3068080]: Accepted publickey for root from 154.47.29.201 port 61176 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:20:52.526149+00:00 crm sshd[3068187]: Accepted publickey for root from 154.47.29.201 port 61177 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:20:58.120555+00:00 crm sshd[3068268]: Invalid user alpha from 45.78.198.78 port 38430
+2025-12-18T23:21:00.501514+00:00 crm sshd[3068268]: Failed password for invalid user alpha from 45.78.198.78 port 38430 ssh2
+2025-12-18T23:22:31.649452+00:00 crm sshd[3068713]: Failed password for root from 68.183.80.103 port 54612 ssh2
+2025-12-18T23:22:53.517659+00:00 crm sshd[3068857]: Invalid user raju from 45.78.198.78 port 46416
+2025-12-18T23:22:56.019516+00:00 crm sshd[3068857]: Failed password for invalid user raju from 45.78.198.78 port 46416 ssh2
+2025-12-18T23:26:17.723994+00:00 crm sshd[3069919]: Accepted publickey for root from 154.47.29.201 port 61212 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:26:24.896784+00:00 crm sshd[3070000]: Accepted publickey for root from 154.47.29.201 port 61213 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:26:34.251992+00:00 crm sshd[3070142]: Accepted publickey for root from 154.47.29.201 port 61214 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:26:35.690760+00:00 crm sshd[3070224]: Accepted publickey for root from 154.47.29.201 port 61215 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:26:36.906578+00:00 crm sshd[3070296]: Accepted publickey for root from 154.47.29.201 port 61216 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:26:43.337814+00:00 crm sshd[3070374]: Accepted publickey for root from 154.47.29.201 port 61218 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:26:44.973208+00:00 crm sshd[3070536]: Accepted publickey for root from 154.47.29.201 port 61219 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:27:12.895143+00:00 crm sshd[3070742]: Accepted publickey for root from 154.47.29.201 port 61220 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:27:16.969368+00:00 crm sshd[3070850]: Accepted publickey for root from 154.47.29.201 port 61221 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:27:19.288224+00:00 crm sshd[3070913]: Accepted publickey for root from 154.47.29.201 port 61222 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:27:35.884604+00:00 crm sshd[3071079]: Accepted publickey for root from 154.47.29.201 port 61223 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:27:39.753062+00:00 crm sshd[3071169]: Accepted publickey for root from 154.47.29.201 port 61224 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:27:41.110174+00:00 crm sshd[3071232]: Accepted publickey for root from 154.47.29.201 port 61225 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:27:53.564201+00:00 crm sshd[3071353]: Accepted publickey for root from 154.47.29.201 port 61226 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:27:57.355767+00:00 crm sshd[3071460]: Accepted publickey for root from 154.47.29.201 port 61227 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:27:58.805536+00:00 crm sshd[3071516]: Accepted publickey for root from 154.47.29.201 port 61228 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:29:22.311695+00:00 crm sshd[3072029]: Invalid user support from 94.156.152.7 port 52030
+2025-12-18T23:29:24.593553+00:00 crm sshd[3072029]: Failed password for invalid user support from 94.156.152.7 port 52030 ssh2
+2025-12-18T23:34:15.018463+00:00 crm sshd[3073524]: Accepted publickey for root from 154.47.29.201 port 61243 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:34:16.665182+00:00 crm sshd[3073597]: Accepted publickey for root from 154.47.29.201 port 61244 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:34:17.955797+00:00 crm sshd[3073653]: Accepted publickey for root from 154.47.29.201 port 61245 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:34:58.682546+00:00 crm sshd[3073887]: Invalid user guest from 49.124.151.32 port 51808
+2025-12-18T23:35:00.712474+00:00 crm sshd[3073887]: Failed password for invalid user guest from 49.124.151.32 port 51808 ssh2
+2025-12-18T23:35:08.466348+00:00 crm sshd[3073976]: Accepted publickey for root from 154.47.29.201 port 61251 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:35:09.937786+00:00 crm sshd[3074082]: Accepted publickey for root from 154.47.29.201 port 61252 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:35:11.297399+00:00 crm sshd[3074136]: Accepted publickey for root from 154.47.29.201 port 61253 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:35:24.918673+00:00 crm sshd[3074258]: Accepted publickey for root from 154.47.29.201 port 61254 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:35:26.424859+00:00 crm sshd[3074339]: Accepted publickey for root from 154.47.29.201 port 61255 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:35:27.712670+00:00 crm sshd[3074396]: Accepted publickey for root from 154.47.29.201 port 61256 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:35:39.176382+00:00 crm sshd[3074511]: Accepted publickey for root from 154.47.29.201 port 61259 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:42:01.505482+00:00 crm sshd[3076584]: Accepted publickey for root from 154.47.29.201 port 61270 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:42:03.910170+00:00 crm sshd[3076684]: Accepted publickey for root from 154.47.29.201 port 61271 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:42:06.119870+00:00 crm sshd[3076753]: Accepted publickey for root from 154.47.29.201 port 61272 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:42:21.617380+00:00 crm sshd[3076904]: Accepted publickey for root from 154.47.29.201 port 61273 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:42:23.311732+00:00 crm sshd[3077020]: Accepted publickey for root from 154.47.29.201 port 61274 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:42:24.843108+00:00 crm sshd[3077079]: Accepted publickey for root from 154.47.29.201 port 61275 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:42:27.054691+00:00 crm sshd[3077145]: Accepted publickey for root from 154.47.29.201 port 61276 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:48:29.986204+00:00 crm sshd[3079112]: Accepted publickey for root from 154.47.29.201 port 61293 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+
+--- Systemd Journal (SSH) ---
+Dec 18 23:20:47 crm sshd[3067837]: Accepted publickey for root from 154.47.29.201 port 61172 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:20:49 crm sshd[3067892]: Accepted publickey for root from 154.47.29.201 port 61173 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:20:49 crm sshd[3067956]: Accepted publickey for root from 154.47.29.201 port 61174 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:20:50 crm sshd[3068016]: Accepted publickey for root from 154.47.29.201 port 61175 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:20:51 crm sshd[3068080]: Accepted publickey for root from 154.47.29.201 port 61176 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:20:52 crm sshd[3068187]: Accepted publickey for root from 154.47.29.201 port 61177 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:20:58 crm sshd[3068268]: Invalid user alpha from 45.78.198.78 port 38430
+Dec 18 23:21:00 crm sshd[3068268]: Failed password for invalid user alpha from 45.78.198.78 port 38430 ssh2
+Dec 18 23:22:31 crm sshd[3068713]: Failed password for root from 68.183.80.103 port 54612 ssh2
+Dec 18 23:22:53 crm sshd[3068857]: Invalid user raju from 45.78.198.78 port 46416
+Dec 18 23:22:56 crm sshd[3068857]: Failed password for invalid user raju from 45.78.198.78 port 46416 ssh2
+Dec 18 23:26:17 crm sshd[3069919]: Accepted publickey for root from 154.47.29.201 port 61212 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:26:24 crm sshd[3070000]: Accepted publickey for root from 154.47.29.201 port 61213 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:26:34 crm sshd[3070142]: Accepted publickey for root from 154.47.29.201 port 61214 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:26:35 crm sshd[3070224]: Accepted publickey for root from 154.47.29.201 port 61215 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:26:36 crm sshd[3070296]: Accepted publickey for root from 154.47.29.201 port 61216 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:26:43 crm sshd[3070374]: Accepted publickey for root from 154.47.29.201 port 61218 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:26:44 crm sshd[3070536]: Accepted publickey for root from 154.47.29.201 port 61219 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:27:12 crm sshd[3070742]: Accepted publickey for root from 154.47.29.201 port 61220 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:27:16 crm sshd[3070850]: Accepted publickey for root from 154.47.29.201 port 61221 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:27:19 crm sshd[3070913]: Accepted publickey for root from 154.47.29.201 port 61222 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:27:35 crm sshd[3071079]: Accepted publickey for root from 154.47.29.201 port 61223 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:27:39 crm sshd[3071169]: Accepted publickey for root from 154.47.29.201 port 61224 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:27:41 crm sshd[3071232]: Accepted publickey for root from 154.47.29.201 port 61225 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:27:53 crm sshd[3071353]: Accepted publickey for root from 154.47.29.201 port 61226 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:27:57 crm sshd[3071460]: Accepted publickey for root from 154.47.29.201 port 61227 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:27:58 crm sshd[3071516]: Accepted publickey for root from 154.47.29.201 port 61228 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:29:22 crm sshd[3072029]: Invalid user support from 94.156.152.7 port 52030
+Dec 18 23:29:24 crm sshd[3072029]: Failed password for invalid user support from 94.156.152.7 port 52030 ssh2
+Dec 18 23:34:15 crm sshd[3073524]: Accepted publickey for root from 154.47.29.201 port 61243 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:34:16 crm sshd[3073597]: Accepted publickey for root from 154.47.29.201 port 61244 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:34:17 crm sshd[3073653]: Accepted publickey for root from 154.47.29.201 port 61245 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:34:58 crm sshd[3073887]: Invalid user guest from 49.124.151.32 port 51808
+Dec 18 23:35:00 crm sshd[3073887]: Failed password for invalid user guest from 49.124.151.32 port 51808 ssh2
+Dec 18 23:35:08 crm sshd[3073976]: Accepted publickey for root from 154.47.29.201 port 61251 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:35:09 crm sshd[3074082]: Accepted publickey for root from 154.47.29.201 port 61252 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:35:11 crm sshd[3074136]: Accepted publickey for root from 154.47.29.201 port 61253 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:35:24 crm sshd[3074258]: Accepted publickey for root from 154.47.29.201 port 61254 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:35:26 crm sshd[3074339]: Accepted publickey for root from 154.47.29.201 port 61255 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:35:27 crm sshd[3074396]: Accepted publickey for root from 154.47.29.201 port 61256 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:35:39 crm sshd[3074511]: Accepted publickey for root from 154.47.29.201 port 61259 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:42:01 crm sshd[3076584]: Accepted publickey for root from 154.47.29.201 port 61270 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:42:03 crm sshd[3076684]: Accepted publickey for root from 154.47.29.201 port 61271 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:42:06 crm sshd[3076753]: Accepted publickey for root from 154.47.29.201 port 61272 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:42:21 crm sshd[3076904]: Accepted publickey for root from 154.47.29.201 port 61273 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:42:23 crm sshd[3077020]: Accepted publickey for root from 154.47.29.201 port 61274 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:42:24 crm sshd[3077079]: Accepted publickey for root from 154.47.29.201 port 61275 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:42:27 crm sshd[3077145]: Accepted publickey for root from 154.47.29.201 port 61276 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+Dec 18 23:48:29 crm sshd[3079112]: Accepted publickey for root from 154.47.29.201 port 61293 ssh2: ED25519 SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+
+=== ERFOLGREICHE LOGINS (Detailliert) ===
+2025-12-18T23:16:19.944334+00:00 crm sshd[3065095]: | publickey | root | 154.47.29.201:61141 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:17:15.808512+00:00 crm sshd[3065484]: | publickey | root | 154.47.29.201:61143 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:18:13.712924+00:00 crm sshd[3065878]: | publickey | root | 154.47.29.201:61147 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:18:15.061346+00:00 crm sshd[3065976]: | publickey | root | 154.47.29.201:61148 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:18:16.229841+00:00 crm sshd[3066124]: | publickey | root | 154.47.29.201:61149 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:18:27.599910+00:00 crm sshd[3066301]: | publickey | root | 154.47.29.201:61150 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:18:30.014540+00:00 crm sshd[3066502]: | publickey | root | 154.47.29.201:61151 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:18:31.055648+00:00 crm sshd[3066588]: | publickey | root | 154.47.29.201:61152 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:20:45.159148+00:00 crm sshd[3067457]: | publickey | root | 154.47.29.201:61170 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:20:46.672159+00:00 crm sshd[3067540]: | publickey | root | 154.47.29.201:61171 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:20:47.989942+00:00 crm sshd[3067837]: | publickey | root | 154.47.29.201:61172 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:20:49.012947+00:00 crm sshd[3067892]: | publickey | root | 154.47.29.201:61173 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:20:49.992772+00:00 crm sshd[3067956]: | publickey | root | 154.47.29.201:61174 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:20:50.778936+00:00 crm sshd[3068016]: | publickey | root | 154.47.29.201:61175 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:20:51.680646+00:00 crm sshd[3068080]: | publickey | root | 154.47.29.201:61176 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:20:52.526149+00:00 crm sshd[3068187]: | publickey | root | 154.47.29.201:61177 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:26:17.723994+00:00 crm sshd[3069919]: | publickey | root | 154.47.29.201:61212 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:26:24.896784+00:00 crm sshd[3070000]: | publickey | root | 154.47.29.201:61213 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:26:34.251992+00:00 crm sshd[3070142]: | publickey | root | 154.47.29.201:61214 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:26:35.690760+00:00 crm sshd[3070224]: | publickey | root | 154.47.29.201:61215 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:26:36.906578+00:00 crm sshd[3070296]: | publickey | root | 154.47.29.201:61216 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:26:43.337814+00:00 crm sshd[3070374]: | publickey | root | 154.47.29.201:61218 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:26:44.973208+00:00 crm sshd[3070536]: | publickey | root | 154.47.29.201:61219 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:27:12.895143+00:00 crm sshd[3070742]: | publickey | root | 154.47.29.201:61220 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:27:16.969368+00:00 crm sshd[3070850]: | publickey | root | 154.47.29.201:61221 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:27:19.288224+00:00 crm sshd[3070913]: | publickey | root | 154.47.29.201:61222 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:27:35.884604+00:00 crm sshd[3071079]: | publickey | root | 154.47.29.201:61223 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:27:39.753062+00:00 crm sshd[3071169]: | publickey | root | 154.47.29.201:61224 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:27:41.110174+00:00 crm sshd[3071232]: | publickey | root | 154.47.29.201:61225 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:27:53.564201+00:00 crm sshd[3071353]: | publickey | root | 154.47.29.201:61226 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:27:57.355767+00:00 crm sshd[3071460]: | publickey | root | 154.47.29.201:61227 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:27:58.805536+00:00 crm sshd[3071516]: | publickey | root | 154.47.29.201:61228 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:34:15.018463+00:00 crm sshd[3073524]: | publickey | root | 154.47.29.201:61243 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:34:16.665182+00:00 crm sshd[3073597]: | publickey | root | 154.47.29.201:61244 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:34:17.955797+00:00 crm sshd[3073653]: | publickey | root | 154.47.29.201:61245 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:35:08.466348+00:00 crm sshd[3073976]: | publickey | root | 154.47.29.201:61251 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:35:09.937786+00:00 crm sshd[3074082]: | publickey | root | 154.47.29.201:61252 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:35:11.297399+00:00 crm sshd[3074136]: | publickey | root | 154.47.29.201:61253 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:35:24.918673+00:00 crm sshd[3074258]: | publickey | root | 154.47.29.201:61254 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:35:26.424859+00:00 crm sshd[3074339]: | publickey | root | 154.47.29.201:61255 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:35:27.712670+00:00 crm sshd[3074396]: | publickey | root | 154.47.29.201:61256 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:35:39.176382+00:00 crm sshd[3074511]: | publickey | root | 154.47.29.201:61259 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:42:01.505482+00:00 crm sshd[3076584]: | publickey | root | 154.47.29.201:61270 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:42:03.910170+00:00 crm sshd[3076684]: | publickey | root | 154.47.29.201:61271 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:42:06.119870+00:00 crm sshd[3076753]: | publickey | root | 154.47.29.201:61272 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:42:21.617380+00:00 crm sshd[3076904]: | publickey | root | 154.47.29.201:61273 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:42:23.311732+00:00 crm sshd[3077020]: | publickey | root | 154.47.29.201:61274 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:42:24.843108+00:00 crm sshd[3077079]: | publickey | root | 154.47.29.201:61275 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:42:27.054691+00:00 crm sshd[3077145]: | publickey | root | 154.47.29.201:61276 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+2025-12-18T23:48:29.986204+00:00 crm sshd[3079112]: | publickey | root | 154.47.29.201:61293 | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+
+=== FEHLGESCHLAGENE LOGIN-VERSUCHE ===
+2025-12-18T22:18:39.573458+00:00 crm sshd[3045548]: | Failed password | User: root | 45.156.87.115
+2025-12-18T22:19:34.535590+00:00 crm sshd[3045841]: | Invalid user | User: odoo | 189.178.50.117
+2025-12-18T22:19:36.500450+00:00 crm sshd[3045841]: | Failed password | User: invalid
+odoo | 189.178.50.117
+2025-12-18T22:23:05.013496+00:00 crm sshd[3046869]: | Failed password | User: root | 24.199.101.205
+2025-12-18T22:33:29.795431+00:00 crm sshd[3050110]: | Invalid user | User: debian | 112.28.73.142
+2025-12-18T22:33:31.389505+00:00 crm sshd[3050110]: | Failed password | User: invalid
+debian | 112.28.73.142
+2025-12-18T22:33:50.122940+00:00 crm sshd[3050283]: | Invalid user | User: support | 94.156.152.7
+2025-12-18T22:33:52.648411+00:00 crm sshd[3050283]: | Failed password | User: invalid
+support | 94.156.152.7
+2025-12-18T22:41:04.248938+00:00 crm sshd[3052488]: | Invalid user | User: admin | 45.148.10.121
+2025-12-18T22:41:06.336402+00:00 crm sshd[3052488]: | Failed password | User: invalid
+admin | 45.148.10.121
+2025-12-18T22:57:40.630512+00:00 crm sshd[3057745]: | Failed password | User: root | 120.48.11.36
+2025-12-18T22:58:31.757246+00:00 crm sshd[3058016]: | Invalid user | User: tes | 14.103.123.87
+2025-12-18T22:58:33.887468+00:00 crm sshd[3058016]: | Failed password | User: invalid
+tes | 14.103.123.87
+2025-12-18T22:59:17.644497+00:00 crm sshd[3058271]: | Failed password | User: root | 160.251.172.221
+2025-12-18T22:59:55.811763+00:00 crm sshd[3058488]: | Invalid user | User: guest | 119.203.251.187
+2025-12-18T22:59:58.138458+00:00 crm sshd[3058488]: | Failed password | User: invalid
+guest | 119.203.251.187
+2025-12-18T23:00:46.866985+00:00 crm sshd[3058770]: | Invalid user | User: max | 14.103.118.226
+2025-12-18T23:00:48.861470+00:00 crm sshd[3058770]: | Failed password | User: invalid
+max | 14.103.118.226
+2025-12-18T23:01:50.634583+00:00 crm sshd[3059102]: | Invalid user | User: support | 94.156.152.7
+2025-12-18T23:01:52.800488+00:00 crm sshd[3059102]: | Failed password | User: invalid
+support | 94.156.152.7
+2025-12-18T23:01:56.359538+00:00 crm sshd[3059104]: | Failed password | User: root | 14.103.123.87
+2025-12-18T23:03:19.102773+00:00 crm sshd[3059538]: | Invalid user | User: vbox | 119.203.251.187
+2025-12-18T23:03:21.102464+00:00 crm sshd[3059538]: | Failed password | User: invalid
+vbox | 119.203.251.187
+2025-12-18T23:03:37.255482+00:00 crm sshd[3059663]: | Failed password | User: root | 160.251.172.221
+2025-12-18T23:04:08.751659+00:00 crm sshd[3059804]: | Invalid user | User: centos | 80.11.139.53
+2025-12-18T23:04:11.143580+00:00 crm sshd[3059804]: | Failed password | User: invalid
+centos | 80.11.139.53
+2025-12-18T23:04:16.580280+00:00 crm sshd[3059861]: | Invalid user | User: wqadmin | 160.251.172.221
+2025-12-18T23:04:19.071454+00:00 crm sshd[3059861]: | Failed password | User: invalid
+wqadmin | 160.251.172.221
+2025-12-18T23:05:51.957449+00:00 crm sshd[3060451]: | Failed password | User: root | 14.103.118.226
+2025-12-18T23:14:58.347485+00:00 crm sshd[3064543]: | Failed password | User: root | 39.164.104.104
+2025-12-18T23:15:02.469477+00:00 crm sshd[3064611]: | Failed password | User: root | 39.164.104.104
+2025-12-18T23:15:07.834476+00:00 crm sshd[3064634]: | Failed password | User: root | 39.164.104.104
+2025-12-18T23:17:22.509365+00:00 crm sshd[3065578]: | Invalid user | User: sina | 115.190.140.2
+2025-12-18T23:17:24.569519+00:00 crm sshd[3065578]: | Failed password | User: invalid
+sina | 115.190.140.2
+2025-12-18T23:17:36.801807+00:00 crm sshd[3065642]: | Invalid user | User: peter | 38.248.12.102
+2025-12-18T23:17:38.450453+00:00 crm sshd[3065642]: | Failed password | User: invalid
+peter | 38.248.12.102
+2025-12-18T23:18:48.091010+00:00 crm sshd[3066833]: | Invalid user | User: admin | 38.248.12.102
+2025-12-18T23:18:50.291470+00:00 crm sshd[3066833]: | Failed password | User: invalid
+admin | 38.248.12.102
+2025-12-18T23:19:41.445428+00:00 crm sshd[3067045]: | Invalid user | User: centos | 125.139.124.120
+2025-12-18T23:19:43.254506+00:00 crm sshd[3067045]: | Failed password | User: invalid
+centos | 125.139.124.120
+2025-12-18T23:20:25.172526+00:00 crm sshd[3067276]: | Failed password | User: root | 115.190.140.2
+2025-12-18T23:20:58.120555+00:00 crm sshd[3068268]: | Invalid user | User: alpha | 45.78.198.78
+2025-12-18T23:21:00.501514+00:00 crm sshd[3068268]: | Failed password | User: invalid
+alpha | 45.78.198.78
+2025-12-18T23:22:31.649452+00:00 crm sshd[3068713]: | Failed password | User: root | 68.183.80.103
+2025-12-18T23:22:53.517659+00:00 crm sshd[3068857]: | Invalid user | User: raju | 45.78.198.78
+2025-12-18T23:22:56.019516+00:00 crm sshd[3068857]: | Failed password | User: invalid
+raju | 45.78.198.78
+2025-12-18T23:29:22.311695+00:00 crm sshd[3072029]: | Invalid user | User: support | 94.156.152.7
+2025-12-18T23:29:24.593553+00:00 crm sshd[3072029]: | Failed password | User: invalid
+support | 94.156.152.7
+2025-12-18T23:34:58.682546+00:00 crm sshd[3073887]: | Invalid user | User: guest | 49.124.151.32
+2025-12-18T23:35:00.712474+00:00 crm sshd[3073887]: | Failed password | User: invalid
+guest | 49.124.151.32
+
+=== IP-STATISTIKEN ===
+Erfolgreiche Logins nach IP:
+    218 82.118.0.92
+     65 154.47.29.201
+     50 213.91.99.143
+
+Fehlgeschlagene Versuche nach IP:
+    422 94.156.152.7
+    165 45.148.10.121
+     46 80.94.95.116
+     37 68.183.80.103
+     35 80.94.95.115
+     33 20.161.60.16
+     27 23.94.28.167
+     27 198.98.53.110
+     16 20.169.74.226
+     13 45.156.87.115
+     10 77.235.115.42
+      6 87.103.126.54
+      6 65.20.175.6
+      6 49.37.32.248
+      6 20.61.126.208
+      6 183.111.171.9
+      6 103.68.22.140
+      5 62.60.131.157
+      5 190.19.10.129
+      5 181.46.131.55
+=== 2. SSH-KEY-ANALYSE ===
+=== AUTORISIERTE SSH-KEYS ===
+Root authorized_keys:
+  Type: ssh-ed25519 | Fingerprint: SHA256:tEcJEhVUU8kPRrr8iqRKdZS0kngiiGZXdvN/7eEIDhs | Comment: 
+  Type: ssh-ed25519 | Fingerprint: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU | Comment: 
+
+=== SSH-KONFIGURATION ===
+sshd_config wichtige Einstellungen:
+Konfiguration nicht lesbar
+
+=== AKTIVE SSH-SESSIONS ===
+
+=== SSH-PROZESSE ===
+root       13622  0.0  0.0  12020  8192 ?        Ss   Dec11   0:06 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+root     3080975  0.0  0.0  15000 10624 ?        Ss   23:48   0:00 sshd: root@notty
+=== 3. TIMELINE DER EREIGNISSE ===
+=== KRITISCHE ZEITPUNKTE ===
+
+1. Container erstellt:
+        "Created": "2025-12-15T17:31:10.251818222Z",
+
+2. Verdächtiger Prozess gestartet:
+   Start-Zeitstempel: 1766039381
+   Start-Datum: Thu Dec 18 06:29:41 AM UTC 2025
+Tue Dec 16 18:49:58 2025
+
+=== SSH-LOGINS UM DIE ZEIT DER INFECTION ===
+Logins am 18.12.2025 um 06:xx:
+
+Logins am 18.12.2025 um 05:xx (Stunde davor):
+
+Logins am 18.12.2025 um 07:xx (Stunde danach):
+
+=== ALLE LOGINS AM 18.12.2025 ===
+=== 4. IP-ANALYSE UND VERGLEICH ===
+=== ALLE EINZIGARTIGEN IPs MIT LOGINS ===
+IP: 154.47.29.201 | Logins: 68 | Erster: 2025-12-18T22:53:10.588351+00:00 crm sshd[3056261]: | Letzter: 2025-12-18T23:48:35.687680+00:00 crm sshd[3081159]: | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+IP: 213.91.99.143 | Logins: 50 | Erster: 2025-12-15T17:15:42.234372+00:00 crm sshd[1703919]: | Letzter: 2025-12-15T17:46:45.033874+00:00 crm sshd[1745231]: | Key: SHA256:tEcJEhVUU8kPRrr8iqRKdZS0kngiiGZXdvN/7eEIDhs
+IP: 82.118.0.92 | Logins: 218 | Erster: 2025-12-15T12:32:04.472913+00:00 crm sshd[1591406]: | Letzter: 2025-12-15T13:24:35.941926+00:00 crm sshd[1642537]: | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+=== IP-VERGLEICH MIT DEINEM SYSTEM ===
+Deine aktuelle öffentliche IP: 154.47.29.201
+Vergleich mit Server-Logins:
+IP: 154.47.29.201 | Logins: 68 | Erster: 2025-12-18T22:53:10.588351+00:00 crm sshd[3056261]: | Letzter: 2025-12-18T23:48:35.687680+00:00 crm sshd[3081159]: | Key: SHA256:YvfMrCHoG8D+ywCCp74tioFvXdBDc83kYS8cYf1P+MU
+=== 5. BRUTE-FORCE vs LEGITIME LOGINS ===
+=== BRUTE-FORCE-ANALYSE ===
+
+IPs mit vielen fehlgeschlagenen Versuchen (>10):
+  94.156.152.7: 422 fehlgeschlagene Versuche
+  45.148.10.121: 165 fehlgeschlagene Versuche
+  80.94.95.116: 46 fehlgeschlagene Versuche
+  68.183.80.103: 37 fehlgeschlagene Versuche
+  80.94.95.115: 35 fehlgeschlagene Versuche
+  20.161.60.16: 33 fehlgeschlagene Versuche
+  23.94.28.167: 27 fehlgeschlagene Versuche
+  198.98.53.110: 27 fehlgeschlagene Versuche
+  20.169.74.226: 16 fehlgeschlagene Versuche
+  45.156.87.115: 13 fehlgeschlagene Versuche
+
+=== IPs MIT ERFOLGREICHEN LOGINS ===
+  82.118.0.92: 218 erfolgreich, 0 fehlgeschlagen - Methode: publickey [VERDÄCHTIG: Nur Erfolg, kein Versuch]
+bash: line 19: [: 0
+0: integer expression expected
+  154.47.29.201: 69 erfolgreich, 0 fehlgeschlagen - Methode: publickey [VERDÄCHTIG: Nur Erfolg, kein Versuch]
+bash: line 19: [: 0
+0: integer expression expected
+  213.91.99.143: 50 erfolgreich, 2 fehlgeschlagen (Ratio: .04) - Methode: publickey
+
+=== ZUSAMMENFASSUNG ===
+Legitime Logins (Public Key, keine fehlgeschlagenen Versuche):
+bash: line 35: [: 0
+0: integer expression expected
+bash: line 35: [: 0
+0: integer expression expected
+=== 6. KORRELATION: LOGINS vs MALWARE-INSTALLATION ===
+=== LOGINS KURZ VOR MALWARE-START ===
+Malware gestartet: 2025-12-18 06:29
+
+Logins in den 2 Stunden davor (04:29 - 06:29):
+
+=== LOGINS KURZ NACH MALWARE-START ===
+Logins in den 2 Stunden danach (06:29 - 08:29):
+==========================================
+  ZUSAMMENFASSUNG
+==========================================
+ANALYSE-ERGEBNISSE:
+
+1. SSH-LOGINS:
+   - Erfolgreiche Logins wurden analysiert
+   - Fehlgeschlagene Versuche wurden gezählt
+   - IPs wurden kategorisiert
+
+2. AUTHENTIFIZIERUNG:
+   - Public Key vs Password Logins
+   - SSH-Key-Fingerprints
+   - Autorisiere Keys
+
+3. TIMELINE:
+   - Container-Erstellung: 15.12.2025 17:31
+   - Malware-Start: 18.12.2025 06:29
+   - Logins um diese Zeit wurden identifiziert
+
+4. IP-VERGLEICH:
+   - Deine aktuelle IP: 154.47.29.201
+   - Vergleich mit Server-Logins durchgeführt
+
+5. BRUTE-FORCE vs LEGITIM:
+   - IPs mit vielen Fehlversuchen = Brute-Force
+   - IPs mit nur erfolgreichen Public Key Logins = Legitim
+   - Verdächtige IPs identifiziert
+
+6. KORRELATION:
+   - Logins vor/nach Malware-Installation
+   - Mögliche Angreifer-IPs identifiziert
+
+NÄCHSTE SCHRITTE:
+- Prüfe den Report: /Users/dsselmanovic/cursor project/kids-ai-all-in/forensic_detailed_report_20251219_004829.txt
+- Vergleiche IPs mit deinen bekannten Systemen
+- Prüfe SSH-Keys auf deinem System
