@@ -2,6 +2,8 @@
 
 **Anleitung für die praktische Nutzung der normalen Agenten und des ArenaProPlus-Modus im Server/Backend-Kontext.**
 
+> **Quick Start:** Für eine schnelle Übersicht siehe [`QUICK_START_AGENTEN.md`](QUICK_START_AGENTEN.md)
+
 ---
 
 ## Inhaltsverzeichnis
