@@ -1,0 +1,14 @@
+PEPK Tool Download:
+==================
+
+Manuell herunterladen:
+1. Gehe zu: https://github.com/google/play-app-signing/releases
+2. Suche nach "pepk.jar" in den Assets
+3. Lade die Datei herunter
+4. Speichere im Projekt-Verzeichnis
+
+ODER direkt (falls verfügbar):
+wget https://github.com/google/play-app-signing/releases/download/v1.0.0/pepk.jar
+
+ODER über Maven:
+Die Datei ist auch in Maven Central verfügbar.

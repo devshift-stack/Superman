@@ -1,0 +1,440 @@
+=== 1. APP-VERZEICHNISSE FINDEN ===
+✓ Gefunden: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/jdb/apps
+✓ Gefunden: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/ktk/apps
+✓ Gefunden: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/aqs/apps
+✓ Gefunden: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/sbf/apps
+✓ Gefunden: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/dsx/apps
+✓ Gefunden: /Users/dsselmanovic/activi-dev-repos/kids-ai-all-in-build/apps
+
+=== 2. APP-GRÖSSEN PRÜFEN ===
+📱 alanko:
+   Gesamt: 2.0M
+   lib/: 564K
+   assets/: 416K
+   android/: 112K
+
+📱 callcenter-ai:
+   Gesamt: 444K
+   lib/: 96K
+   assets/: 16K
+   android/: 40K
+
+📱 lianko:
+   Gesamt: 3.2M
+   lib/: 856K
+   assets/: 1.3M
+   android/: 84K
+
+📱 parent:
+   Gesamt: 1.5M
+   lib/: 264K
+   assets/: 368K
+   android/: 88K
+
+📱 therapy-ai:
+   Gesamt: 1.2M
+   lib/: 452K
+   assets/: 
+   android/: 108K
+
+📱 therapy-parent:
+   Gesamt: 80K
+   lib/: 64K
+   assets/: 
+   android/: 
+
+📱 therapy-web:
+   Gesamt: 56K
+   lib/: 48K
+   assets/: 
+   android/: 
+
+📱 alanko:
+   Gesamt: 2.0M
+   lib/: 564K
+   assets/: 416K
+   android/: 112K
+
+📱 callcenter-ai:
+   Gesamt: 404K
+   lib/: 120K
+   assets/: 8.0K
+   android/: 40K
+
+📱 lianko:
+   Gesamt: 3.2M
+   lib/: 856K
+   assets/: 1.3M
+   android/: 84K
+
+📱 parent:
+   Gesamt: 1.5M
+   lib/: 264K
+   assets/: 368K
+   android/: 88K
+
+📱 therapy-ai:
+   Gesamt: 1.0M
+   lib/: 448K
+   assets/: 
+   android/: 96K
+
+📱 therapy-parent:
+   Gesamt: 80K
+   lib/: 64K
+   assets/: 
+   android/: 
+
+📱 therapy-web:
+   Gesamt: 56K
+   lib/: 48K
+   assets/: 
+   android/: 
+
+📱 alanko:
+   Gesamt: 2.0M
+   lib/: 564K
+   assets/: 416K
+   android/: 112K
+
+📱 callcenter-ai:
+   Gesamt: 344K
+   lib/: 64K
+   assets/: 8.0K
+   android/: 40K
+
+📱 lianko:
+   Gesamt: 3.2M
+   lib/: 856K
+   assets/: 1.3M
+   android/: 84K
+
+📱 parent:
+   Gesamt: 1.5M
+   lib/: 264K
+   assets/: 368K
+   android/: 88K
+
+📱 therapy-ai:
+   Gesamt: 1.0M
+   lib/: 448K
+   assets/: 
+   android/: 96K
+
+📱 therapy-parent:
+   Gesamt: 80K
+   lib/: 64K
+   assets/: 
+   android/: 
+
+📱 therapy-web:
+   Gesamt: 56K
+   lib/: 48K
+   assets/: 
+   android/: 
+
+📱 alanko:
+   Gesamt: 2.0M
+   lib/: 564K
+   assets/: 416K
+   android/: 120K
+
+📱 callcenter-ai:
+   Gesamt: 344K
+   lib/: 64K
+   assets/: 8.0K
+   android/: 40K
+
+📱 lianko:
+   Gesamt: 3.2M
+   lib/: 856K
+   assets/: 1.3M
+   android/: 92K
+
+📱 parent:
+   Gesamt: 1.5M
+   lib/: 264K
+   assets/: 368K
+   android/: 96K
+
+📱 therapy-ai:
+   Gesamt: 1.0M
+   lib/: 448K
+   assets/: 
+   android/: 104K
+
+📱 therapy-parent:
+   Gesamt: 80K
+   lib/: 64K
+   assets/: 
+   android/: 
+
+📱 therapy-web:
+   Gesamt: 56K
+   lib/: 48K
+   assets/: 
+   android/: 
+
+📱 alanko:
+   Gesamt: 2.0M
+   lib/: 564K
+   assets/: 416K
+   android/: 112K
+
+📱 callcenter-ai:
+   Gesamt: 344K
+   lib/: 64K
+   assets/: 8.0K
+   android/: 40K
+
+📱 lianko:
+   Gesamt: 3.2M
+   lib/: 856K
+   assets/: 1.3M
+   android/: 84K
+
+📱 parent:
+   Gesamt: 1.5M
+   lib/: 264K
+   assets/: 368K
+   android/: 88K
+
+📱 therapy-ai:
+   Gesamt: 1.0M
+   lib/: 448K
+   assets/: 
+   android/: 96K
+
+📱 therapy-parent:
+   Gesamt: 80K
+   lib/: 64K
+   assets/: 
+   android/: 
+
+📱 therapy-web:
+   Gesamt: 56K
+   lib/: 48K
+   assets/: 
+   android/: 
+
+📱 alanko:
+   Gesamt: 1.1G
+   lib/: 564K
+   assets/: 416K
+   android/: 29M
+   Build-Dateien:
+     - app-release.apk: 67M
+     - app-release.apk: 67M
+
+📱 callcenter-ai:
+   Gesamt: 344K
+   lib/: 64K
+   assets/: 8.0K
+   android/: 40K
+
+📱 lianko:
+   Gesamt: 1.2G
+   lib/: 856K
+   assets/: 1.3M
+   android/: 30M
+   Build-Dateien:
+     - app-release.apk: 89M
+     - app-release.apk: 89M
+
+📱 parent:
+   Gesamt: 1.1G
+   lib/: 264K
+   assets/: 368K
+   android/: 22M
+   Build-Dateien:
+     - app-release.apk: 64M
+     - app-release.apk: 64M
+
+📱 therapy-ai:
+   Gesamt: 988K
+   lib/: 448K
+   assets/: 
+   android/: 84K
+
+📱 therapy-parent:
+   Gesamt: 80K
+   lib/: 64K
+   assets/: 
+   android/: 
+
+📱 therapy-web:
+   Gesamt: 56K
+   lib/: 48K
+   assets/: 
+   android/: 
+
+=== 3. LI KI TRAIN FEATURES SUCHEN ===
+Prüfe: alanko
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/jdb/apps/alanko
+   Keine Li KI Train Features gefunden
+
+Prüfe: callcenter-ai
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/jdb/apps/callcenter-ai
+   Keine Li KI Train Features gefunden
+
+Prüfe: lianko
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/jdb/apps/lianko
+   Keine Li KI Train Features gefunden
+
+Prüfe: parent
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/jdb/apps/parent
+/Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/jdb/apps/parent/firebase.json:{"flutter":{"platforms":{"android":{"default":{"projectId":"kids-ai-train","appId":"1:153773777928:android:c86bec49038b775f10ddbd","fileOutput":"android/app/google-services.json"}},"ios":{"default":{"projectId":"kids-ai-train","appId":"1:153773777928:ios:07a9bfe2ac0c806d10ddbd","uploadDebugSymbols":true,"fileOutput":"ios/Runner/GoogleService-Info.plist"}},"dart":{"lib/firebase_options.dart":{"projectId":"kids-ai-train","configurations":{"android":"1:153773777928:android:c86bec49038b775f10ddbd","ios":"1:153773777928:ios:07a9bfe2ac0c806d10ddbd","web":"1:153773777928:web:cf183804762f100f10ddbd"}}}}}}
+
+Prüfe: therapy-ai
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/jdb/apps/therapy-ai
+/Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/jdb/apps/therapy-ai/pubspec.yaml:description: Li KI Training - AI-Powered Therapy App for children with hearing impairment
+
+Prüfe: therapy-parent
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/jdb/apps/therapy-parent
+   Keine Li KI Train Features gefunden
+
+Prüfe: therapy-web
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/jdb/apps/therapy-web
+   Keine Li KI Train Features gefunden
+
+Prüfe: alanko
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/ktk/apps/alanko
+   Keine Li KI Train Features gefunden
+
+Prüfe: callcenter-ai
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/ktk/apps/callcenter-ai
+   Keine Li KI Train Features gefunden
+
+Prüfe: lianko
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/ktk/apps/lianko
+   Keine Li KI Train Features gefunden
+
+Prüfe: parent
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/ktk/apps/parent
+/Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/ktk/apps/parent/firebase.json:{"flutter":{"platforms":{"android":{"default":{"projectId":"kids-ai-train","appId":"1:153773777928:android:c86bec49038b775f10ddbd","fileOutput":"android/app/google-services.json"}},"ios":{"default":{"projectId":"kids-ai-train","appId":"1:153773777928:ios:07a9bfe2ac0c806d10ddbd","uploadDebugSymbols":true,"fileOutput":"ios/Runner/GoogleService-Info.plist"}},"dart":{"lib/firebase_options.dart":{"projectId":"kids-ai-train","configurations":{"android":"1:153773777928:android:c86bec49038b775f10ddbd","ios":"1:153773777928:ios:07a9bfe2ac0c806d10ddbd","web":"1:153773777928:web:cf183804762f100f10ddbd"}}}}}}
+
+Prüfe: therapy-ai
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/ktk/apps/therapy-ai
+/Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/ktk/apps/therapy-ai/pubspec.yaml:description: Li KI Training - AI-Powered Therapy App for children with hearing impairment
+
+Prüfe: therapy-parent
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/ktk/apps/therapy-parent
+   Keine Li KI Train Features gefunden
+
+Prüfe: therapy-web
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/ktk/apps/therapy-web
+   Keine Li KI Train Features gefunden
+
+Prüfe: alanko
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/aqs/apps/alanko
+   Keine Li KI Train Features gefunden
+
+Prüfe: callcenter-ai
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/aqs/apps/callcenter-ai
+   Keine Li KI Train Features gefunden
+
+Prüfe: lianko
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/aqs/apps/lianko
+   Keine Li KI Train Features gefunden
+
+Prüfe: parent
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/aqs/apps/parent
+/Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/aqs/apps/parent/firebase.json:{"flutter":{"platforms":{"android":{"default":{"projectId":"kids-ai-train","appId":"1:153773777928:android:c86bec49038b775f10ddbd","fileOutput":"android/app/google-services.json"}},"ios":{"default":{"projectId":"kids-ai-train","appId":"1:153773777928:ios:07a9bfe2ac0c806d10ddbd","uploadDebugSymbols":true,"fileOutput":"ios/Runner/GoogleService-Info.plist"}},"dart":{"lib/firebase_options.dart":{"projectId":"kids-ai-train","configurations":{"android":"1:153773777928:android:c86bec49038b775f10ddbd","ios":"1:153773777928:ios:07a9bfe2ac0c806d10ddbd","web":"1:153773777928:web:cf183804762f100f10ddbd"}}}}}}
+
+Prüfe: therapy-ai
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/aqs/apps/therapy-ai
+/Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/aqs/apps/therapy-ai/pubspec.yaml:description: Li KI Training - AI-Powered Therapy App for children with hearing impairment
+
+Prüfe: therapy-parent
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/aqs/apps/therapy-parent
+   Keine Li KI Train Features gefunden
+
+Prüfe: therapy-web
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/aqs/apps/therapy-web
+   Keine Li KI Train Features gefunden
+
+Prüfe: alanko
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/sbf/apps/alanko
+   Keine Li KI Train Features gefunden
+
+Prüfe: callcenter-ai
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/sbf/apps/callcenter-ai
+   Keine Li KI Train Features gefunden
+
+Prüfe: lianko
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/sbf/apps/lianko
+   Keine Li KI Train Features gefunden
+
+Prüfe: parent
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/sbf/apps/parent
+/Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/sbf/apps/parent/firebase.json:{"flutter":{"platforms":{"android":{"default":{"projectId":"kids-ai-train","appId":"1:153773777928:android:c86bec49038b775f10ddbd","fileOutput":"android/app/google-services.json"}},"ios":{"default":{"projectId":"kids-ai-train","appId":"1:153773777928:ios:07a9bfe2ac0c806d10ddbd","uploadDebugSymbols":true,"fileOutput":"ios/Runner/GoogleService-Info.plist"}},"dart":{"lib/firebase_options.dart":{"projectId":"kids-ai-train","configurations":{"android":"1:153773777928:android:c86bec49038b775f10ddbd","ios":"1:153773777928:ios:07a9bfe2ac0c806d10ddbd","web":"1:153773777928:web:cf183804762f100f10ddbd"}}}}}}
+
+Prüfe: therapy-ai
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/sbf/apps/therapy-ai
+/Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/sbf/apps/therapy-ai/pubspec.yaml:description: Li KI Training - AI-Powered Therapy App for children with hearing impairment
+
+Prüfe: therapy-parent
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/sbf/apps/therapy-parent
+   Keine Li KI Train Features gefunden
+
+Prüfe: therapy-web
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/sbf/apps/therapy-web
+   Keine Li KI Train Features gefunden
+
+Prüfe: alanko
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/dsx/apps/alanko
+   Keine Li KI Train Features gefunden
+
+Prüfe: callcenter-ai
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/dsx/apps/callcenter-ai
+   Keine Li KI Train Features gefunden
+
+Prüfe: lianko
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/dsx/apps/lianko
+   Keine Li KI Train Features gefunden
+
+Prüfe: parent
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/dsx/apps/parent
+/Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/dsx/apps/parent/firebase.json:{"flutter":{"platforms":{"android":{"default":{"projectId":"kids-ai-train","appId":"1:153773777928:android:c86bec49038b775f10ddbd","fileOutput":"android/app/google-services.json"}},"ios":{"default":{"projectId":"kids-ai-train","appId":"1:153773777928:ios:07a9bfe2ac0c806d10ddbd","uploadDebugSymbols":true,"fileOutput":"ios/Runner/GoogleService-Info.plist"}},"dart":{"lib/firebase_options.dart":{"projectId":"kids-ai-train","configurations":{"android":"1:153773777928:android:c86bec49038b775f10ddbd","ios":"1:153773777928:ios:07a9bfe2ac0c806d10ddbd","web":"1:153773777928:web:cf183804762f100f10ddbd"}}}}}}
+
+Prüfe: therapy-ai
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/dsx/apps/therapy-ai
+/Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/dsx/apps/therapy-ai/pubspec.yaml:description: Li KI Training - AI-Powered Therapy App for children with hearing impairment
+
+Prüfe: therapy-parent
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/dsx/apps/therapy-parent
+   Keine Li KI Train Features gefunden
+
+Prüfe: therapy-web
+Suche in: /Users/dsselmanovic/.cursor/worktrees/kids-ai-all-in/dsx/apps/therapy-web
+   Keine Li KI Train Features gefunden
+
+Prüfe: alanko
+Suche in: /Users/dsselmanovic/activi-dev-repos/kids-ai-all-in-build/apps/alanko
+   Keine Li KI Train Features gefunden
+
+Prüfe: callcenter-ai
+Suche in: /Users/dsselmanovic/activi-dev-repos/kids-ai-all-in-build/apps/callcenter-ai
+   Keine Li KI Train Features gefunden
+
+Prüfe: lianko
+Suche in: /Users/dsselmanovic/activi-dev-repos/kids-ai-all-in-build/apps/lianko
+   Keine Li KI Train Features gefunden
+
+Prüfe: parent
+Suche in: /Users/dsselmanovic/activi-dev-repos/kids-ai-all-in-build/apps/parent
+/Users/dsselmanovic/activi-dev-repos/kids-ai-all-in-build/apps/parent/firebase.json:{"flutter":{"platforms":{"android":{"default":{"projectId":"kids-ai-train","appId":"1:153773777928:android:c86bec49038b775f10ddbd","fileOutput":"android/app/google-services.json"}},"ios":{"default":{"projectId":"kids-ai-train","appId":"1:153773777928:ios:07a9bfe2ac0c806d10ddbd","uploadDebugSymbols":true,"fileOutput":"ios/Runner/GoogleService-Info.plist"}},"dart":{"lib/firebase_options.dart":{"projectId":"kids-ai-train","configurations":{"android":"1:153773777928:android:c86bec49038b775f10ddbd","ios":"1:153773777928:ios:07a9bfe2ac0c806d10ddbd","web":"1:153773777928:web:cf183804762f100f10ddbd"}}}}}}
+
+Prüfe: therapy-ai
+Suche in: /Users/dsselmanovic/activi-dev-repos/kids-ai-all-in-build/apps/therapy-ai
+/Users/dsselmanovic/activi-dev-repos/kids-ai-all-in-build/apps/therapy-ai/pubspec.yaml:description: Li KI Training - AI-Powered Therapy App for children with hearing impairment
+
+Prüfe: therapy-parent
+Suche in: /Users/dsselmanovic/activi-dev-repos/kids-ai-all-in-build/apps/therapy-parent
+   Keine Li KI Train Features gefunden
+
+Prüfe: therapy-web
+Suche in: /Users/dsselmanovic/activi-dev-repos/kids-ai-all-in-build/apps/therapy-web
+   Keine Li KI Train Features gefunden
+
+=== 4. LIANKO/LINKI CONTEXT IN KIDS-APPS ===

@@ -1,0 +1,69 @@
+videose|77.42.46.56|CPU:2.1|LOAD:0.02|MEM:6.7
+=== Netzwerk-Verbindungen: videose ===
+      2 [
+=== Verdächtige Dateien: videose ===
+/tmp/fast_migrate.sh
+/tmp/import_table.sh
+/tmp/mysql_export.sql
+/tmp/migrate.py
+=== Container: videose ===
+crm-api|crm-activi-api|Up 3 days (healthy)
+=== Fehlgeschlagene SSH-Logins: videose ===
+      2 165.232.90.178
+      2 
+      1 60460
+      1 59416
+      1 58316
+      1 57238
+      1 56036
+      1 49912
+      1 49870
+      1 43386
+crm|46.62.254.77|CPU:100.0|LOAD:16.03|MEM:13.7
+VERDÄCHTIG: crm - PID 2144884 - /tmp/mysql  - /tmp/mysql
+=== Netzwerk-Verbindungen: crm ===
+     14 85.11.167.3
+      1 154.47.29.201
+      1 115.190.140.2
+=== Container: crm ===
+crm-api|crm-activi-api|Up 3 days (healthy)
+=== Fehlgeschlagene SSH-Logins: crm ===
+      7 
+      2 38.248.12.102
+      1 80.11.139.53
+      1 46864
+      1 43566
+      1 35260
+      1 34142
+      1 34117
+      1 34092
+      1 160.251.172.221
+sipgate|116.203.245.77|CPU:9.1|LOAD:0.04|MEM:14.4
+=== Netzwerk-Verbindungen: sipgate ===
+      1 165.227.181.137
+      1 154.47.29.201
+=== Fehlgeschlagene SSH-Logins: sipgate ===
+      7 
+      4 2.57.121.112
+      3 165.227.181.137
+      1 94.156.152.7
+      1 92.118.39.87
+      1 60.48.114.31
+      1 53690
+      1 209.38.42.118
+      1 12684
+Scrap|91.98.78.198|CPU:6.0|LOAD:0.04|MEM:20.5
+=== Netzwerk-Verbindungen: Scrap ===
+      1 193.46.255.33
+      1 154.47.29.201
+=== Container: Scrap ===
+testin-frontend|testin-ai-frontend|Up 3 days
+=== Fehlgeschlagene SSH-Logins: Scrap ===
+      7 
+      3 57380
+      3 20400
+      2 45.78.218.12
+      2 139.59.65.106
+      1 80.94.92.187
+      1 193.32.162.146
+      1 159.203.111.120

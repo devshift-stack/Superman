@@ -1,0 +1,31 @@
+{
+  "timestamp": "2025-12-18T04:33:10.656327",
+  "repos": {
+    "kids-ai-all-in": {
+      "name": "kids-ai-all-in",
+      "branch": "main",
+      "last_commit": null,
+      "commits_today": 0,
+      "commits_week": 0,
+      "status": "clean"
+    }
+  },
+  "security": {
+    "overall": "good",
+    "critical_count": 0,
+    "warnings_count": 0,
+    "issues": {
+      "critical": [],
+      "warnings": [],
+      "info": []
+    }
+  },
+  "developers": {},
+  "summary": {
+    "total_repos": 1,
+    "active_repos": 0,
+    "total_commits_week": 0,
+    "security_status": "good",
+    "total_developers": 0
+  }
+}

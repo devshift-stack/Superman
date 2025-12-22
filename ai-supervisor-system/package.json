@@ -1,12 +1,18 @@
 {
-  "name": "ai-supervisor-system",
+  "name": "emir-superman",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "AI Supervisor System mit Multi-Agent-Orchestrierung",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "jest --testPathPattern=tests --coverage"
   },
-  "keywords": [],
+  "keywords": [
+    "ai",
+    "supervisor",
+    "multi-agent"
+  ],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
@@ -14,13 +20,18 @@
     "@anthropic-ai/sdk": "^0.71.2",
     "@google/generative-ai": "^0.24.1",
     "@pinecone-database/pinecone": "^6.1.3",
+    "axios": "^1.13.2",
     "bullmq": "^5.66.1",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
     "ioredis": "^5.8.2",
     "openai": "^6.14.0",
+    "socket.io": "^4.8.1",
     "sqlite3": "^5.1.7",
-    "uuid": "^13.0.0"
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
