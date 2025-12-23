@@ -5,7 +5,8 @@
   "main": "emir-superman/server.js",
   "scripts": {
     "start": "cd emir-superman && node server.js",
-    "dev": "cd emir-superman && node server.js"
+    "dev": "cd emir-superman && node server.js",
+    "arena:dev": "tsx watch arena/src/index.ts"
   },
   "keywords": ["ai", "supervisor", "multi-agent"],
   "author": "",
@@ -23,6 +24,9 @@
     "openai": "^6.14.0",
     "sqlite3": "^5.1.7",
     "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2"
   }
 }
 
