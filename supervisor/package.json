@@ -1,0 +1,19 @@
+{
+  "name": "call-supervisor",
+  "version": "1.0.0",
+  "description": "Intelligent Call Supervisor with Multi-Model Arena Integration",
+  "type": "module",
+  "main": "server.ts",
+  "scripts": {
+    "start": "tsx server.ts",
+    "dev": "tsx watch server.ts"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.0"
+  }
+}

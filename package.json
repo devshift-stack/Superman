@@ -6,7 +6,8 @@
   "scripts": {
     "start": "cd emir-superman && node server.js",
     "dev": "cd emir-superman && node server.js",
-    "arena:dev": "tsx watch arena/src/index.ts"
+    "arena:dev": "tsx watch arena/src/index.ts",
+    "supervisor:dev": "tsx watch supervisor/server.ts"
   },
   "keywords": [
     "ai",
